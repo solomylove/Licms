@@ -1,0 +1,61 @@
+<assign name="delete_button_url" value="__URL__/del"/>
+<include file="public:header"/>
+
+<script type="text/javascript" >
+
+
+$(document).ready(function(){
+	
+	
+	 ajaxManageContent();
+	 
+	 $('#search_button').click(function(){
+		 
+		 ajaxManageContent();
+		 
+		 });
+	
+	});
+	
+	
+
+function ajaxManageContent(){
+	
+	var url='__GROUP__/hospital/ajaxManageContent';
+	
+	$.get(
+	url,$('form').serialize(),
+	function(data){
+		$('#manage_content').html(data);
+		});
+}
+
+
+  </script>
+
+
+
+<!-- 过滤-->
+<div class="submenu_tool">
+ <form action="" method="get"> <table width="1093" height="63" border="0">
+    <tr>
+      <td width="144" height="59">按地区：</td>
+      <td width="401">{:W('ShowArea')}
+        <label for="textfield"></label></td>
+      <td width="534">医院名：
+        <input type="text" name="keyword" id="keyword">
+      <input type="button" name="button" id="search_button" value="查询"></td>
+    </tr>
+  </table></form>
+  
+</div>
+<p>
+  
+  <!--内容列表 -->
+  
+</p>
+<div id="manage_content">
+</div>
+<include file="public:checkbox_tool"/>
+
+<include file="public:footer"/>

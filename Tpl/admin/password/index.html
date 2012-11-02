@@ -1,0 +1,25 @@
+<assign name='submenu_title' value="修改密码"/>
+
+<include file="public:header"/>
+<form name="form1" method="post" action="__URL__/repassword">
+  <table width="400" border="0">
+    <tr>
+      <td width="134">原密码：</td>
+      <td width="256"><label for="oldpassword"></label>
+      <input type="text" name="oldpassword" id="oldpassword" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>新密码：</td>
+      <td><input type="text" name="password" id="password" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>重复新密码</td>
+      <td><input type="text" name="repassword" id="repassword" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="修改" class="bn"></td>
+    </tr>
+  </table>
+</form>
+<include file="public:footer"/>

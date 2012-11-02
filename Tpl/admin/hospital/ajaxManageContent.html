@@ -1,0 +1,19 @@
+ <table width="579" border="0" cellspacing="0">
+    <tr>
+      <td scope="col">标题</td>
+      <td>添加时间</td>
+      <td>操作</td>
+    </tr>
+    
+    <volist name="hospital_list" id="vo">
+      <tr>
+        <td width="445">      <input type="checkbox" name="hospital_id[]" id="hospital_id[]" value="{$vo.hospital_id}">
+        {$vo.hospital_title}</td>
+        <td width="130">{$vo.create_time|date="y-m-d H:i:s",###}</td>
+        <td width="130"><a href="__GROUP__/hospital/edit/hospital_id/{$vo.hospital_id}">编辑 </a><a href="#" class="delete_button" value="{$vo.hospital_id}">删除</a></td>
+      </tr>
+  </volist>
+  </table>
+  <div class="page_show">
+    <p>{$page_show}</p>
+</div>

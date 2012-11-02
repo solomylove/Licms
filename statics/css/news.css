@@ -1,0 +1,262 @@
+
+@charset "utf-8";
+body {
+    color: #4F6B72;
+}
+.clear {
+    clear: both;
+}
+a {
+    color: #4C5C80;
+}
+
+
+
+.login_head {
+    background-image: url("../../statics/img/bbody.jpg");
+    height: 40px;
+    line-height: 40px;
+}
+.login_quick {
+    float: right;
+    margin-left: 20px;
+}
+em.error {
+    background-image: url("__STATICS__/img/error.png");
+    background-position: 7px center;
+    background-repeat: no-repeat;
+    background-size: 13px auto, 13px auto;
+    color: #808080;
+    float: right;
+    font-size: 15px;
+    padding-left: 40px;
+    width: 300px;
+}
+.index_font {
+    color: #B63838;
+    float: left;
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.index_font:hover {
+    text-decoration: none;
+}
+.login_main {
+    margin: 10px auto;
+    width: 1200px;
+}
+li {
+    list-style: none outside none;
+}
+.nav {
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    font-weight: bolder;
+    height: 50px;
+}
+.nav li {
+    float: left;
+}
+.nav a {
+    color: #2A3F55;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+}
+.nav a:hover {
+    border-bottom: 3px solid;
+}
+.login_quick li {
+    float: left;
+    margin-left: 20px;
+}
+.login_quick a {
+    font-weight: normal;
+}
+.must_validate {
+    color: #FF0000;
+    float: right;
+    margin-right: 4px;
+}
+.input_input {
+    height: 40px;
+    width: 250px;
+}
+.input_verify {
+    height: 19px;
+    width: 60px;
+    float: left;
+    margin-left: 10px;
+}
+.item_left {
+    float: left;
+    width: 100px;
+}
+.notice_box {
+    float: left;
+    margin-left: 300px;
+    overflow: hidden;
+    width: 260px;
+}
+.notice a {
+    display: none;
+}
+.foot a:hover {
+    text-decoration: underline;
+}
+.wrap {
+    margin: auto;
+    width: 1200px;
+}
+.button {
+    background: none repeat scroll 0 0 #6ABCFD;
+    border: medium none;
+    color: white;
+    font-weight: bold;
+}
+.login_index {
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 500px;
+}
+#mem_index_show {
+    background-color: #A0A0A4;
+    clear: both;
+    height: 200px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.news, .local {
+    float: left;
+    margin-left: 20px;
+    width: 300px;
+}
+.pc_left {
+    float: left;
+    width: 800px;
+}
+.pc_right {
+    float: right;
+    width: 300px;
+}
+.pc_right .c_box {
+    margin-bottom: 20px;
+}
+.subnav li {
+    float: left;
+    margin-left: 20px;
+}
+.subnav {
+    height: 25px;
+    line-height: 25px;
+}
+.guide {
+    border: 1px dashed #2A9F00;
+    min-height: 40px;
+}
+#comment {
+    height: 100px;
+    width: 790px;
+}
+.c_info, c_info a {
+    color: #00BF00;
+}
+.c_info li {
+    float: left;
+    margin-left: 10px;
+}
+.c_detail {
+    clear: both;
+}
+.c_b_div {
+    margin-right: 5px;
+    text-align: right;
+}
+.comment_area {
+    margin-left: 0;
+    width: 800px;
+}
+.re_de {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.article_box {
+    background-color: #FFFFFF;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 800px;
+}
+.comment_box {
+    margin-top: 20px;
+}
+.co_list_son {
+    height: 60px;
+    margin-left: 30px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.co_h {
+    line-height: 40px;
+}
+.c_info {
+    border-bottom: 1px dashed #A0A0A4;
+}
+.article_content, .article_info, .article_limit {
+    border-bottom: 1px solid #BBBBBB;
+}
+.article_content {
+    min-height: 500px;
+    padding-top: 20px;
+    word-wrap: break-word;
+}
+.article_info {
+    padding-top: 20px;
+    text-align: center;
+}
+.article_limit {
+    float: right;
+}
+.article_title_font {
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+}
+.relative_read {
+    line-height: 13px;
+    list-style: decimal outside none;
+}
+.article_page_show {
+    clear: both;
+    text-align: right;
+}
+.location {
+    color: #B63838;
+    height: 30px;
+    line-height: 30px;
+}
+.c_box {
+    float: left;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.box_h {
+    background-color: #978989;
+    color: white;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+
+.search{
+	float:right;
+	margin-left: 20px;
+}
+#verify_button {
+float: left;
+}

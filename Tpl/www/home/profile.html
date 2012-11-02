@@ -1,0 +1,46 @@
+<layout name="home_layout"/>
+<include file="public:datepicker"/>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#birthday').datepicker({changeMonth: true,
+			changeYear: true, yearRange: '1900:2010'});
+	});
+</script>
+<div class="menu_center">
+  <div class="tool_bar">
+    <div class="tool_bar_head">
+      <h4 class="tool_head_font">修改资料</h4>
+    </div>
+    <div id="tool_bar_content">  <form action="{:U(updateProfile)}" method="post">
+    <div class="item">
+      <table width="812" height="186" border="0">
+        <tr>
+          <td width="94" height="33"><label for="textfield5">账户：</label></td>
+          <td width="708">{$user.username}</td>
+        </tr>
+        <tr>
+          <td height="28">邮箱</td>
+          <td><input name="email" type="text" class="input_input" id="textfield3" value="{$user.email}"></td>
+        </tr>
+        <tr>
+          <td height="31">地区</td>
+          <td>{:W('ShowArea',array('province_id'=>$user['province_id'],'city_id'=>$user['city_id']))}</td>
+        </tr>
+        <tr>
+          <td height="24">性别</td>
+          <td>{:W('Sex',array('value'=>$user['sex']))}
+            </td>
+        </tr>
+        <tr>
+          <td height="28">qq</td>
+          <td><input name="qq" type="text" id="qq" value="{$user.qq}"></td>
+        </tr>
+        <tr>
+          <td height="28">&nbsp;</td>
+          <td><input type="submit" name="button" id="button" value="修改" class="button"></td>
+        </tr>
+      </table>
+      <p></div>
+  </form></div>
+  </div>
+</div>

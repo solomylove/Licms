@@ -1,0 +1,35 @@
+
+<include file="public:header"/>
+<form action="__GROUP__/system/add_money" method="post">
+  <p>
+    <label for="money_default">&nbsp;&nbsp;&nbsp; &nbsp; </label>
+  </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <table width="816" border="0">
+    <tr>
+      <td width="169">用户初始金额：</td>
+      <td width="222"><input name="score_default" type="text" class="input_input" id="money_default" value="{$config.score_default}"></td>
+      <td width="411">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><label for="score_pay">默认支付值：&nbsp; </label></td>
+      <td><input name="score_pay" type="text" class="input_input" id="score_pay" value="{$config.score_pay}"></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>积分兑换比：</td>
+      <td><label for="bilv"></label>
+      <input name="bilv" type="text" id="bilv" value="{$config.bilv}"></td>
+      <td>*例：输入3 ，即表示充值一元可以对3个积分</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="修改"></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+<include file="public:footer"/>

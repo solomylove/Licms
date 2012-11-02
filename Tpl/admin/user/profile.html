@@ -1,0 +1,66 @@
+<style type="text/css">
+
+.profile {
+	width: 500px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+body{
+	text-align:center;}
+	
+	div{
+	text-align:center;}
+</style>
+<include file="public:header"/>
+<div class="profile">
+  <table width="812" height="499" border="0">
+    <tr>
+      <td width="124" height="33"><label for="textfield5">账户：</label></td>
+      <td width="678">{$user.username}</td>
+    </tr>
+    <tr>
+      <td height="55">电话：</td>
+      <td><label for="password">{$user.phone}</label></td>
+    </tr>
+    <tr>
+      <td height="44">qq:</td>
+      <td><label for="qq">{$user.qq}</label></td>
+    </tr>
+    <tr>
+      <td height="41">邮箱</td>
+      <td>{$user.email}</td>
+    </tr>
+    <tr>
+      <td height="38">地区</td>
+      <td>{:W('ShowArea',array('province_id'=>$user['province_id'],'city_id'=>$user['city_id']))}</td>
+    </tr>
+    <tr>
+      <td height="44">地址：</td>
+      <td>{$user.address}</td>
+    </tr>
+    <tr>
+      <td height="44">积分：</td>
+      <td>{$user.score}</td>
+    </tr>
+    <tr>
+      <td height="44">扣分规则：</td>
+      <td>{$user.score_pay}</td>
+    </tr>
+    <tr>
+      <td height="44">最近登录时间：</td>
+      <td>{$user.last_login_time|date="y-m-d H:i:s",###}</td>
+    </tr>
+    <tr>
+      <td height="44">登录计数：</td>
+      <td>{$user.login_count}</td>
+    </tr>
+    <tr>
+      <td height="44">注册时间：</td>
+      <td>{$user.create_time|date='y-m-d',###}</td>
+    </tr>
+  </table>
+  <p><a href="javascript:window.close()">关闭</a></p>
+</div>
+<include file="public:footer"/>

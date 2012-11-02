@@ -1,0 +1,22 @@
+<include file="menu:header"/>
+
+<table width="494" border="0">
+  <tr>
+    <td width="140">提问人</td>
+    <td width="170">标题</td>
+    <td width="170">状态</td>
+    <td width="140">操作</td>
+  </tr>
+  
+  <volist name="feed_list" id="vo">
+  <tr>
+    <td>{$vo.username}</td>
+    <td>{$vo.title}</td>
+    <td><a href="__URL__/status/feedback_id/{$vo.feedback_id}" class="status_button">{$vo.status|status}</a></td>
+    <td><a href="__URL__/del/feedback_id/{$vo.feedback_id}" class="confirm">删除 </a><a href="__URL__/reply/feedback_id/{$vo.feedback_id}">回复</a></td>
+    </tr>
+  </volist>
+</table>
+
+
+<include file="public:footer"/>

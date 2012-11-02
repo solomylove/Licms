@@ -1,0 +1,43 @@
+
+<include file="public:header"/>
+<div class="submenu_tool">
+<form action="" method="get">  <table width="1102" border="0">
+    <tr>
+      <td width="82">地区：</td>
+      <td width="721">{:W('ShowArea')}</td>
+      <td width="285"><label for="keyword"></label>
+      用户名：
+        <input type="text" name="keyword" id="keyword">        
+        <input type="button" name="search_button" id="search_button" value="查询"></td>
+    </tr>
+    <tr>
+      <td>时间：</td>
+      <td><include file="public:time_tool"/></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table></form>
+</div>
+<div id="manage_content"></div>
+<include file="public:footer"/>
+<script type="text/javascript">
+$(document).ready(function(){
+	       ajaxAnalyze();
+	  $('#search_button').click(function(){
+		  
+		        ajaxAnalyze();
+		  });
+	});
+
+function ajaxAnalyze(){
+	
+	 url="__GROUP__/analyze/{$target}?"+$('form').serialize();
+		  
+		  $.get(url,function(data){
+			  			  
+			  
+			  $('#manage_content').html(data);
+			  
+			  });
+	}
+
+  </script>

@@ -1,0 +1,38 @@
+<include file="menu:header"/>
+<div  id="manage_content"><form action="__URL__/role_add_menu/role_id/{$_GET.role_id}" method="post"><table width="400" border="0">
+  <tr>
+    <td>菜单</td>
+    </tr>
+<php>
+
+function a_list($data,$sep){
+
+     foreach($data as $key=>$value){
+       
+         $menu_id=$value['menu_id'];
+         
+         $menu_title=$value['menu_title'];
+     
+          echo   '<tr>';
+         if($value['checked']==1){        //判断整合在一起会出现问题，不得解释
+                 $status='checked';
+                 echo     " <td><input name=\"menu_list[]\" type=\"checkbox\" value=\"$menu_id\" $status>$sep$menu_title</td>";
+         }else{
+  echo     " <td><input name=\"menu_list[]\" type=\"checkbox\" value=\"$menu_id\" >$sep$menu_title</td>";    
+       
+         }
+           echo     "</tr>";
+           
+           if(isset($value['_child'])){
+             a_list($value['_child'],$sep.'————');
+           }
+      }
+
+}
+
+  a_list($menu_list);
+  
+ </php>
+</table><input name="" type="submit" value="修改" class="bn"></form></div>
+<include file="public:footer"/>
+

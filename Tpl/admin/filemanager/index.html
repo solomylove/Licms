@@ -1,0 +1,36 @@
+<include file="menu:header"/>
+<style type="text/css">
+.bg_dir ,.bg_file {
+    display: inline-block;
+    height: 14px;
+    margin: 0 3px;
+    vertical-align: middle;
+    width: 14px;
+}
+
+
+.bg_dir{
+	background-image: url(__STATICS__/img/dir.png);
+	background-repeat: no-repeat;
+	}
+.bg_file {
+	background-image: url(__STATICS__/img/bg_file.png);
+	background-repeat: no-repeat;
+}
+</style>
+
+
+<a href="__URL__/index/path/{$backpath}">返回上一页 </a><a href="__ACTION__/path/uploads"> 上传文件夹 </a><a href="__ACTION__">顶部</a>
+注意系统文件请不要删除!
+<table width="450" border="0">
+  <php>foreach($file_list as $vo):</php>
+  <tr>
+    <td width="328"><span class="<php>if($vo['file']){echo 'bg_file';}else{
+    echo 'bg_dir';
+    }</php>"></span><a href="__URL__/index/path/<php>echo $vo['path']</php>" ><php>echo $vo['file_name'];</php></a></td>
+    <td width="106"><a href="__URL__/del/path/<php>echo $vo['path']</php>" class='confirm'>删除</a><a href="__URL__/download/path/<php>echo $vo['path'];</php>"> <php>if($vo['file']){ echo ' 下载';}</php></a></td>
+  </tr>
+    <php>endforeach;</php>
+</table>
+
+<include file="public:footer"/>

@@ -1,0 +1,36 @@
+
+<include file="public:header"/>
+
+<form action="__GROUP__/hospital/{$target}" method="post">
+
+
+<div class="item">
+  <table width="572" border="0">
+    <tr>
+      <td width="119" height="62">选择地区</td>
+      <td width="443">{:W('ShowArea',array('province_id'=>$hospital[province_id],'city_id'=>$hospital[city_id]))}  </td>
+    </tr>
+    <tr>
+      <td height="49"><label for="hospital_title">医院</label></td>
+      <td><input name="hospital_title" type="text" class="input_input" id="hospital_title" value="{$hospital.hospital_title}"></td>
+    </tr>
+    <tr>
+      <td height="44"><label for="hospital_address2">地址</label></td>
+      <td><input name="hospital_address" type="text" class="input_input" id="hospital_address" value="{$hospital.hospital_address}"></td>
+    </tr>
+    <tr>
+      <td><label for="textfield3">电话</label></td>
+      <td><input name="hospital_phone" type="text" class="input_input" id="textfield2" value="{$hospital.hospital_phone}"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input name="input" type="submit" value="添加" class="button"></td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</form>
+
+
+<include file="public:footer"/>

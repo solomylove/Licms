@@ -1,0 +1,86 @@
+<assign name="delete_button_url" value="__URL__/del"/>
+<include file="public:header"/>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	
+	$(':text').change(function(){
+		
+		$(this).css('background-color','#A0A0A4');
+		
+		
+		});
+	
+	$('.edit_button').live('click',(function(){
+		 var edit_button_url='__URL__/update/level_id/'+$(this).attr('value');
+		 var data=$(this).parent().parent().find('input').serialize();
+	     $.post(edit_button_url,data,function(json){
+			 alert(json.info);
+			 },'json');
+		}));
+		
+		
+    $('.add_button').live('click',function(){
+		$(this).closest('tr').clone().appendTo('#manage_content table').find('.add_to').show();
+		});	
+	
+	
+	$('.delete_button_self').live('click',function(){
+		 delete_button($(this).attr('value'),$(this));
+		});
+		
+		
+	$('.add_to').live('click',function(){
+		obj=this;
+		$.post('__URL__/add',$(this).closest('tr').find('input').serialize(),function(data){
+			$(obj).hide();
+			
+		   if(data.status==1){
+			 	$(obj).hide()
+			   }else{
+				alert(data.info);   
+			   }
+
+			},'json');
+		}
+
+		
+		);	
+		
+		
+	});
+
+</script>
+
+<div id="manage_content">
+  <table width="738" border="0">
+    <tr>
+      <td width="168">等级名</td>
+      <td width="168">满足积分</td>
+      <td width="168">优惠积分</td>
+      <td width="216">操作</td>
+    </tr>
+    
+    <volist name="level_list" id="vo">
+    <tr>
+      <td><input name="level_title" id="level_title" type="text" value="{$vo.level_title}"></td>
+      <td><label for="score"></label>
+        <input name="score" type="text" id="score" value="{$vo.score}"></td>
+      <td><label for="back"></label>
+        <input name="back" type="text" id="back" value="{$vo.back}"></td>
+      <td><a href="#" class="add_button">增加 </a><a href="#" class="edit_button" value="{$vo.level_id}">修改</a><a href="#" class="delete_button_self" value="{$vo.level_id}"> 删除</a> <a href="#" class="add_to" style="display:none;">确认添加</a></td>
+    </tr>
+    </volist>
+         <tr>
+      <td><input name="level_title" id="level_title" type="text"></td>
+      <td><label for="score"></label>
+        <input name="score" type="text" id="score"></td>
+      <td><label for="back"></label>
+        <input name="back" type="text" id="back"></td>
+      <td><a href="#" class="add_button">增加 </a><a href="#" class="edit_button" value="{$vo.level_id}">修改</a><a href="#" class="delete_button_self" value="{$vo.level_id}"> 删除</a> <a href="#" class="add_to">确认添加</a></td>
+    </tr>
+  </table>
+</div>
+
+<include file="public:footer"/>

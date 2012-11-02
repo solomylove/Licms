@@ -1,0 +1,235 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+font-size: 12px;
+color: #4f6b72;
+background:  rgb(252, 252, 252);
+}
+
+
+a {
+color: rgb(170, 0, 0);
+text-decoration:none;
+}
+
+{
+	}
+	
+.aligentop{
+	vertical-align:top;
+	}	
+	
+table {
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+caption {
+padding: 0 0 5px 0;
+width: 700px;
+font: italic 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+text-align: right;
+}
+
+th {
+font: bold 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #4f6b72;
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+border-top: 1px solid #C1DAD7;
+letter-spacing: 2px;
+text-transform: uppercase;
+text-align: left;
+padding: 6px 6px 6px 12px;
+background: #CAE8EA no-repeat;
+}
+/*power by www.winshell.cn*/
+th.nobg {
+border-top: 0;
+border-left: 0;
+border-right: 1px solid #C1DAD7;
+background: none;
+}
+
+td {
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+font-size:23px;
+padding: 6px 6px 6px 12px;
+color: #4f6b72;
+}
+
+td.alt {
+background: #F5FAFA;
+color: #797268;
+}
+
+th.spec {
+border-left: 1px solid #C1DAD7;
+border-top: 0;
+background: #fff no-repeat;
+font: bold 13px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+th.specalt {
+border-left: 1px solid #C1DAD7;
+border-top: 0;
+background: #f5fafa no-repeat;
+font: bold 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #797268;
+}
+/*---------for IE 5.x bug*/
+html>body td{ font-size: 12px;}
+body,td,th {
+font-size: 136x;
+}
+
+.trhover{
+	background-color:#A0A0A4;
+	}
+
+.input_input {
+    height: 30px;
+    width: 300px;
+}
+
+.input_verify {
+    height: 30px;
+    width: 70px;
+}
+
+
+.input_area{
+	width:533px;
+	height:253px;
+	}
+	
+.input_input:hover,.input_num:hover,.input_area:hover,.input_verify:hover{
+	border:2px  solid #FFDF00
+	}
+
+.verify_button{
+	margin-left:20px;
+	}
+
+.submenu {
+    background-color:rgb(221, 220, 223); 
+    color: rgb(134, 13, 13);
+    font-size: px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgb(197, 197, 197);
+}
+
+.input_num{
+	
+	width:20px;
+	height:20px;
+	
+	
+	}
+	
+.bn{
+    font-size: 15px;
+    height: 40px;
+    width: 80px;
+}	
+	
+.selected{
+	
+	background: #CCC;
+	
+	}	
+
+.must_validate{
+	color: #F00;
+	font-size: 16px;	
+	
+	}
+
+
+	
+.submenu_tool ,.manage_content{
+	border-bottom: rgb(184, 184, 184) solid 2px;
+	background-color: #CFC;
+	width:auto;
+	}
+.page_show,.page_show_no_ajax{
+		border-top:#BBB solid 1px;
+		text-align:right;
+		float:right;
+	}
+	
+		
+.checkbox_tool{
+	width:200px;
+	float:left;
+	font-size:12px;
+}
+
+
+.operate {
+    height: 25px;
+    line-height: 25px;
+    margin-left: 10px;
+}
+
+form td {
+    border: medium none;
+}
+
+
+tr{
+	height:20px;
+	background: #fff;
+	}
+/*文章编辑css*/
+
+.article_content{
+	padding:25px;
+	}
+
+
+
+/*领导上传*/
+
+
+.uploadtool{
+	width:500px;
+	float:left;
+	margin-left:30px;
+	}
+#photo_div {
+width: 90px;
+height: 120px;
+float: left;
+}
+
+.uploadarea{
+	float:left;
+	width:300px;
+	}
+.uploadtip{
+	float:left;
+	width:200px;
+	
+	}	
+	
+	
+.minfoot{
+height: 20px;
+background-color: white;
+line-height: 20px;
+font-size:12px;
+}	
+	
+	
+	#manage_content {
+border-bottom: 2px solid rgb(184, 167, 167);
+min-height: 250px;
+}

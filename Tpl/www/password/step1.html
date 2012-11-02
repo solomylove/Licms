@@ -1,0 +1,33 @@
+
+  <layout name="login_layout"/>
+  
+<div class="pass1">
+  <style type="text/css">
+.pass1 {
+	width:500px;
+	margin-top:100px;
+}
+
+.pass1 div{
+	
+	margin-top:10px;}
+
+</style>
+  <h4>找回密码</h4>
+  <form name="form1" method="post" action="{:U('step2')}">
+    <div class="item">找回账户
+  <label for="username"></label>
+        <input type="text" name="username" id="username" class="input_input">
+        
+    </div>
+    <div class="item">验证码：
+  <label for="verify"></label> <img src="__GROUP__/public/verify.jpg" id="verify_button">
+      <input name="verify" type="text" id="verify" size="8" class="input_verify">     
+      
+      <div class="item">
+        <input type="submit" name="button" id="button" value="提交账户" class="button">
+      </div>
+      
+    </div>
+  </form>
+</div>

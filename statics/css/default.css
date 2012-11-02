@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("reset.css");
+
+.foot{
+	clear:both;
+	min-height:30px;
+	background-color:#2A3F55;
+	text-align:center;
+	overflow:auto;
+	bottom:0px;
+	width: 100%;
+}
+
+.foot a{
+	color:white;
+	font-size:13px;
+}
+
+body {
+    color: #6E6E6E;
+    font: 14px/22px '微软雅黑','Helvetica Neue',Helvetica,Arial,Sans-serif;
+}
+
+.button{
+	width:66px;
+	height:30px;
+	left:50%;
+	}
+	
+.button:hover{
+	}
+	
+input,select{
+	vertical-align:middle;
+}
+input {
+	font-family:'Verdana';
+}
+
+select{
+	 width: 110px; height: 18px; overflow: hidden;
+	 line-height:50px;	
+}
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+.login_main{
+	min-height:500px;
+}
+
+
+
+.reg_box{
+	margin-top:20px;
+	width:800px;
+	}
+	
+.reg_box div{
+	margin-top:10px;
+	}
+	
+	
+.login_box{
+	
+	width:400px;
+	float:right;}
+	
+	
+.lb-item{
+	margin-top:10px;
+	}
+	
+	#login_button{
+		margin-left:100px;
+		margin-top:20px;
+		}
+		
+	#reg_button{
+		float:left;
+		margin-left:100px;
+		margin-top:20px;
+		}
+		
+		
+		.item_left {
+line-height: 40px;
+}				

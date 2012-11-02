@@ -1,0 +1,15 @@
+<include file="menu:header"/>
+<form action="__URL__/config_add" method="post">
+  <table width="400" border="0">
+    <tr>
+      <td width="116">开启审核：</td>
+      <td width="274"><input name="feedback_status_on" type="checkbox" id="link_status_on" value="1"<php>if($feedback_status_on=='1') echo 'checked';</php>>
+      <label for="link_status_on"></label></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="提交"></td>
+    </tr>
+  </table>
+</form>
+<include file="public:footer"/>

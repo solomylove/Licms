@@ -1,0 +1,60 @@
+<layout name="home_layout" />
+<include file="public:datepicker"/>
+<style type="text/css">
+.alipay {
+	margin-top:20px;
+	position:absolute;
+	bottom:1px;
+	margin-left:200px;
+}
+
+.menu_center{
+	height:700px;
+	}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	userMoney();
+	
+	$('#user_search_button').click(function(){
+
+		           userMoney();
+		});
+		$('.page_show a').live('click',function(){
+		      $('#tool_bar_content').load($(this).attr('href'));
+			  return false;
+		});
+});
+
+
+function userMoney(){
+	
+		$.get('{:U('ajax')}',$('form').serialize(),
+function(data){
+	
+			$('#tool_bar_content').html(data);
+			});
+}
+
+</script>
+
+
+<div class="menu_center">
+  <div class="tool_bar">
+    <div class="tool_bar_head">
+      <h4 class="tool_head_font">充值查询</h4>
+    </div>
+    <div class="tool_menu">
+      <form action="" method="get">
+        <table width="672" border="0">
+          <tr>
+            <td width="512"><include file="public:time_tool"/></td>
+            <td width="105"><input name="查询" type="button" id="user_search_button" value="查询"></td>
+          </tr>
+  </table>
+  </form>
+    </div>
+    <div id="tool_bar_content"></div>
+  </div>
+  <div class="alipay"><include file="secure:alipay/index"/></div>
+</div>

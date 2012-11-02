@@ -1,0 +1,20 @@
+<table width="658" border="0">
+  <tr>
+    <td width="113">消费积分</td>
+    <td width="266">消费时间</td>
+    <td width="265">在文章</td>
+
+  </tr>
+  <volist name="pay_list" id="vo">
+  <tr>
+    <td>{$vo.pay}</td>
+    <td>{$vo.create_time|date="y-m-d H:i:s",###}</td>
+    <td>{$vo.article_title}</td>
+  </tr>
+  </volist>
+      <tbody>
+  </tbody>
+</table>
+<div class="page_show">
+  <empty name="pay_list">暂无相关记录</empty>
+{$page_show}</div>

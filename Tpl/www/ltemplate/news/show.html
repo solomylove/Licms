@@ -1,0 +1,64 @@
+<layout name="login_layout"/>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+				$('#comment_list_append').load("__GROUP__/article/comments/article_id/{$_GET.article_id}/"+Math.random());
+		});
+
+</script>
+
+<div class="subnav">
+</div>
+<assign name="site_title" value="$article['article_title']"/>
+<php>$data=A('www/article')->show();
+     $article=$data['article'];
+     $relative=$data['relative'];
+     $page_show=$data['page_show'];
+     $current_location=$data['current_location'];
+</php>
+<div class="pc_left">
+  <div class="article_box">
+    <h4 class="location">当前位置：<a href="__APP__/public/login">首页</a>
+    <volist name='current_location' id="vo">-<a href="{$vo._link}">{$vo.category_title}</a></volist></h4>
+    <h1 class="article_title_font">{$article.article_title}</h1>
+    <div class="article_info">作者：{$article_title} 发布时间：{$article.publish_time} 浏览次数：{$article.read_count} 
+      <notempty  name="article['guide']"><div class="guide">{$article.guide}</div></notempty>
+    </div><div class="article_content">{$article.content}</div>
+    <div class="share"><include file="public:share"/><p class="article_page_show">{$page_show}</p></div>
+    
+    <php>$updown=A('www/article')->upDown()</php>
+    <div>
+      <ul>
+        <li>上一篇：<a href="{$updown.up._link}">{$updown.up.article_title}</a></li>
+        <li>下一篇：<a href="{$updown.down._link}">{$updown.down.article_title}</a></li>
+      </ul>
+    </div>
+    
+    
+    <!--相关阅读-->
+    <notempty name="relative_list">
+      <div class="relative_read">  
+        <span>相关</span>　　
+        <ul class="re_de">
+          <volist name="relative_list" id="vo">
+            <li><a href="{:U('article/show',array('article_id'=>$vo['article_id']))}"> [{$vo.category_title}]{$vo.article_title}</li>
+          </volist>
+      </ul> </div>
+    </notempty>
+    <!--评论 -->
+    <div class="comment_box">
+      <div class="comment_area">
+        <form method="post" action="__GROUP__/comment/add">
+          <div><textarea name="comment" cols="" rows=""  id="comment"></textarea></div>
+          <div class="c_b_div"><input type="submit" name="button" id="comment_button" value="评论" class="button">
+          <input name="belong_id" type="hidden" value="{$_GET.article_id}"></div>
+        </form>
+      </div>
+
+      <div class="comment_list">
+        <h3 class="co_h">最新评论</h3>
+        <div id="comment_list_append"></div>
+      </div>
+    </div>
+  </div>
+</div>

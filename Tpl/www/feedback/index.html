@@ -1,0 +1,91 @@
+<layout name="login_layout"/>
+<style type="text/css">
+.feb_info {
+	font-size: 10px;
+	color: #2ABF55;
+}
+.feb_item {
+    background-color: white;
+    border-bottom: 1px dotted  #A0A0A4;
+	border-top: 1px dotted  #A0A0A4;
+    margin-top: 20px;
+	  -moz-border-radius: 15px;                                         /* Firefox */
+  -webkit-border-radius: 15px;                                     /* Safari and Chrome */
+  border-radius: 15px;                                             /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+
+  -moz-box-shadow: 10px 10px 20px #000;                 /* Firefox */
+  -webkit-box-shadow: 10px 10px 20px #000;             /* Safari and Chrome */
+  box-shadow: 10px 10px 20px #000;                         /* Opera 10.5+, future browsers and IE6+ using IE-CSS3 */
+  behavior: url(ie-css3.htc);                         /* This lets IE know to call the script on all elements which get the 'box' class */
+}
+.feb_left{
+	float:left;
+	width:500px;
+	}
+.feb_reply{
+	float:left;
+	width:400px;
+	}
+.feb_left div{
+	margin-top:20px;}
+	
+#username,#title{
+	height:40px;
+	width:200px;	
+}
+
+#content{
+	width:400px;
+	height:150px
+}
+
+.feb{
+	margin-top:30px;
+	
+	}
+
+</style>
+<div class="feb">
+
+<div class="feb_left">
+<h2>反馈问题</h2>
+  <form name="form1" method="post" action="__URL__/add">
+    <div>
+      <div>昵称：
+        <label for="username"></label>
+        <input type="text" name="username" id="username" >
+      </div>
+<div>
+  <div>标题：
+    <label for="title"></label>
+    <input type="text" name="title" id="title">
+  </div>
+<div>
+          <div>内容：
+              <textarea name="content" id="content" cols="45" rows="5"></textarea>
+          </div>
+          <div style="text-align:center">
+              <input type="submit" name="button" id="button" value="发布反馈">
+          </div>
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="feb_reply">
+  <h4>已有反馈：</h4>
+    <volist name="feedback_list" id="vo">
+      <div class="feb_item">
+      <h3>{$vo.title}</h3>
+      <div class="feb_info">{$vo.username} 在{$vo.create_time|date="y-m-d",###} 提问</div>
+      <div class="feb_c">详细：{$vo.content}</div>
+      <div>回复：{$vo._reply.content}</div>
+      </div>
+    </volist>
+  <div class="page_show">{$page_show}</div>
+</div>
+
+
+</div>

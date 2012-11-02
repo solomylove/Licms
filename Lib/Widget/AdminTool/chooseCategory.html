@@ -1,0 +1,19 @@
+<select name="category_id" id="categorys">
+<php>
+function show_list($data,$sep,$init){
+      foreach($data  as $list){
+      if($list['category_id']==$init){
+            echo '<option value="'.$list['category_id'].'" selected>'.$sep.$list['category_title'].'</option>';
+      }else{
+      echo '<option value="'.$list['category_id'].'">'.$sep.$list['category_title'].'</option>';
+      }       
+      if(isset($list['_child'])){
+        show_list($list['_child'],$sep.'———',$init);
+      }
+      }
+}
+ echo '<option value="">请选择</option>';
+show_list($category_list,'',$checked_id);
+</php>
+    
+    </select>

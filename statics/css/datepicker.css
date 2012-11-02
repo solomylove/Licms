@@ -1,0 +1,73 @@
+
+
+#ui-datepicker-div{
+	background-color: #000;
+	}	
+	
+	.ui-icon ,.ui-icon-circle-triangle-e{
+	cursor: pointer;	
+		}
+		
+#ui-datepicker-div table {
+width: 100%;
+padding: 0;
+margin: 0;
+}
+
+#ui-datepicker-div caption {
+padding: 0 0 5px 0;
+width: 700px;
+font: italic 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+text-align: right;
+}
+
+#ui-datepicker-div th {
+font: bold 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #4f6b72;
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+border-top: 1px solid #C1DAD7;
+letter-spacing: 2px;
+text-transform: uppercase;
+text-align: left;
+padding: 6px 6px 6px 12px;
+background: #CAE8EA no-repeat;
+}
+/*power by www.winshell.cn*/
+#ui-datepicker-div th.nobg {
+border-top: 0;
+border-left: 0;
+border-right: 1px solid #C1DAD7;
+background: none;
+}
+
+#ui-datepicker-div td {
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+background: #fff;
+font-size:13px;
+padding: 6px 6px 6px 12px;
+color: #4f6b72;
+}
+
+#ui-datepicker-div td.alt {
+background: #F5FAFA;
+color: #797268;
+}
+
+#ui-datepicker-div th.spec {
+border-left: 1px solid #C1DAD7;
+border-top: 0;
+background: #fff no-repeat;
+font: bold 13px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#ui-datepicker-div th.specalt {
+border-left: 1px solid #C1DAD7;
+border-top: 0;
+background: #f5fafa no-repeat;
+font: bold 20px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #797268;
+}
+		

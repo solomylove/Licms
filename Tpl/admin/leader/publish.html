@@ -1,0 +1,69 @@
+<include file="menu:header"/>
+<load href="__STATICS__/uploadify/uploadify.js"/>
+<load href="__STATICS__/uploadify/uploadify.css"/>
+
+<script type="text/javascript">
+$(function() {
+    $("#upload").uploadify({
+        height        : 30,
+        swf           : '__STATICS__/uploadify/uploadify.swf',
+        uploader      : '__URL__/upload',
+        width         : 120,
+		'auto'     : false,
+		 'onUploadSuccess' : function(file, data, response) {
+			 data=$.parseJSON(data);
+			 if(data.status==0){
+				 alert(data.info);
+				 }else{
+					 $('#photo').val(data.data);  //返回的url
+					 $('#photoimg').attr('src',data.data);
+					 }
+        } 
+    });
+});
+
+</script>
+<form action="__URL__/{$target}" method="post" enctype="multipart/form-data" name="form1">
+  <table width="1168" border="0">
+    <tr>
+      <td width="59">姓名<span class="must_validate">*</span></td>
+      <td width="1099"><label for="title"></label>
+      <input name="name" type="text" id="name" value="{$edit.name}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td class="aligentop">头像
+        <input type="hidden" name="photo" id="photo" value="{$edit.photo}"></td>
+      <td><label for="photo"></label>
+        <div id="photo_div">
+       <notempty name="edit[photo]"><img src="{$edit.photo}" width="84px" height="110px" id="photoimg"><else/><img src="__STATICS__/img/nophoto.jpg" width="84px" height="110px" id="photoimg"></notempty>
+        </div>
+        <div class="uploadtool">
+        <div class="uploadarea"> <input type="file" name="photo_upload" id="photo_upload"></div>
+      <div class="uploadtip">
+      <input name="" type="button" value="开始上传" onClick="$('#photo_upload').uploadify('upload','*')">
+      上传比例84*100</div>
+      </div></td>
+    </tr>
+    <tr>
+      <td>职务</td>
+      <td><label for="post"></label>
+      <input name="post" type="text" id="post" value="{$edit.post}" class="input_input">
+      多个职务请用[、]括号中的符号隔开</td>
+    </tr>
+    <tr>
+      <td class="aligentop">职责</td>
+      <td><label for="textfield"></label>
+        <label for="intro"></label>
+      <textarea name="intro" id="intro" cols="45" rows="5" class="input_area">{$edit.intro}</textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input name="id" type="hidden" id="id" value="{$_GET.id}">        <input type="submit" name="ajax-submit" id="ajax_submit" value="发布" class="bn"></td>
+    </tr>
+  </table>
+</form>
+
+
+
+<include file="public:footer"/>
+

@@ -1,0 +1,6 @@
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --START--
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Run CheckRoute Behavior [ RunTime:0.001979s ]
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --END-- [ RunTime:0.029278s ]
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --START--
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Run ReadHtmlCache Behavior [ RunTime:0.003917s ]
+[ 2012-05-25T12:40:31+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --END-- [ RunTime:0.004099s ]

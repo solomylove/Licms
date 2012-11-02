@@ -1,0 +1,22 @@
+<include file="menu:header"/>
+<form action="__URL__/config_add" method="post"><table width="400" border="0">
+  <tr>
+    <td><input type="checkbox" name="comment_status_on" id="checkbox" {$config.comment_status_on|checkbox} >
+      <label for="checkbox"></label>
+    开启审核</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" name="comment_sensitive" id="checkbox2" {$config.comment_sensitive|checkbox}>
+      <label for="checkbox2"></label>
+      过滤敏感词</td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="button" id="button" value="提交"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table></form>
+
+
+<include file="public:footer"/>

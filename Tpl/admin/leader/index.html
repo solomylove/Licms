@@ -1,0 +1,38 @@
+
+<include file="menu:header"/>
+
+<div id="manage_content">
+<table width="1135" border="0">
+  <tr>
+    <td width="116">id</td>
+    <td width="74">排序</td>
+    <td width="164">姓名</td>
+    <td width="119">头像</td>
+    <td width="248">职务</td>
+    <td width="388">职能</td>
+    <td width="119">操作</td>
+    </tr>
+  
+  
+  <volist name="part" id="vo">
+  <tr>
+    <td><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.id}">
+      <label for="checkbox"></label>
+      {$vo.id}</td>
+    <td class="activeinput" link="__URL__/order/id/{$vo.id}" iwidth="40px">{$vo.orderid}</td>
+    <td>{$vo.name}</td>
+    <td><notempty name="vo['photo']">有<else/>无</notempty></td>
+    <td>{$vo.post}</td>
+    <td><php>echo msubstr($vo["intro"],0,10)</php></td>
+    <td><a href="#" class="delete_button">删除 </a><a href="__URL__/edit/id/{$vo.id}">编辑</a></td>
+    </tr>
+  
+  </volist>
+</table>
+</div>
+<div class="minfoot">
+<div class="page_show_no_ajax">{$page_show}</div>
+<include file="public:checkbox_tool"/>
+</div>
+
+<include file="public:footer"/>

@@ -1,0 +1,58 @@
+<include file="public:header"/>
+<form action="__URL__/updateProfile/user_id/{$_GET.user_id}" method="post">
+  <table width="816" border="0">
+  <tr>
+    <td width="156">用户账号：</td>
+    <td width="650"><label for="username">{$user.username}</label></td>
+  </tr>
+  <tbody>
+  <tr>
+    <td>账户类型：</td>
+    <td><label for="role"></label>
+      <select name="role_id" id="role">
+      <volist name="role_list" id="vo">
+      <option value="{$vo.role_id}"<php>if($vo['role_id']==$user['role_id']) echo 'selected';</php>>{$vo.role_title}</option>
+      </volist>
+      </select></td>
+  </tr>
+  <tr>
+    <td>创建时间：</td>
+    <td>{$user.create_time|date="y-m-d H-i-s",###}</td>
+  </tr>
+  <tr>
+    <td>最近登录：</td>
+    <td>{$user.last_login_time|date="y-m-d H-i-s",###}</td>
+  </tr>
+  <tr>
+    <td>登录次数：</td>
+    <td>{$user.login_count}</td>
+  </tr>
+  <tr>
+    <td>电话：</td>
+    <td><label for="phone"></label>
+      <input name="phone" type="text" id="phone" value="{$user.phone}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td>qq：</td>
+    <td><label for="qq"></label>
+      <input name="qq" type="text" id="qq" value="{$user.qq}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td>email：</td>
+    <td><label for="email"></label>
+      <input name="email" type="text" id="email" value="{$user.email}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td class="aligentop">备注：</td>
+    <td><label for="other"></label>
+    <textarea name="other" id="other" cols="45" rows="5" class="input_area">{$user.other}</textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" value="修改资料 " class="bn"></td>
+  </tr>
+  </tbody>
+  </table>
+</form>
+
+<include file="public:footer"/>

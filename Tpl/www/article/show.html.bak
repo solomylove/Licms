@@ -1,0 +1,79 @@
+<assign name="site_title" value="$article['article_title']"/>
+<layout name="home_layout"/>
+<load href="__STATICS__/css/article.css"/>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+	
+	
+$('.article_content').click(function(){
+	copy_error();
+	$(this).html($(this).html());
+	
+	});
+
+$(window).keydown(function(){
+	
+	 copy_error();
+	});	
+	
+	
+	});
+
+
+function copy_error(){
+	
+	alert('请打印');
+	
+	}
+
+</script>
+
+
+<noscript>
+
+<iframe src="*.htm"></iframe>
+
+</noscript> 
+
+<div class="article_box">
+  <h1 class="article_title_font">{$article.article_title}</h1>
+  <div class="article_info">作者：{$article_title} 发布时间：{$article.publish_time} 浏览次数：{$article.read_count} 打印次数：{$article.download_count}</div>
+  
+  
+  <div class="article_content" oncopy="event.returnValue=false" oncontextmenu="self.event.returnValue=false" onselectstart="return false" oncopy="event.returnValue=false" >{$article.content}</div>
+  
+  
+  
+  
+  
+<div class="share"><include file="public:share"/> </div>
+ <div class="article_page_show">{$page_show}</div>
+  <div class="article_limit">
+    <p>支付积分：{$article.score_pay}  免费预览: {$article.free_page} 页 <a href="{:U('www/article/notice',array('article_id'=>$article['article_id']))}">开始打印</a></p>
+  </div>
+    <div class="relative_read">　　<dl>
+　　<dt>相关：</dt>
+<empty name="relative_list">暂无</empty>
+<volist name="relative_list" id="vo">
+　　<dd><a href="{:U('article/show',array('article_id'=>$vo['article_id']))}"> [{$vo.category_title}]{$vo.article_title}</a></dd>
+</volist>
+　　</dl> </div>
+</div>
+
+<div class="comment_box">
+<div class="comment_hand_on"></div>
+
+<form method="post" action="">
+<div  class="">
+	<textarea name="comment" cols="" rows=""></textarea>
+    <input type="submit" name="button" id="button" value="提交评论">
+</div>
+</form>
+<div class="comment_list"></div>
+
+
+
+</div>

@@ -1,0 +1,109 @@
+<layout name="login_layout"/>
+<load href="__STATICS__/js/jquery.validate.js"/>
+<include file="public:datepicker"/>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$( "#birthday" ).datepicker({changeMonth: true,
+			changeYear: true, yearRange: '1900:2010'});
+	$("#regForm").validate({
+		errorClass:'error',
+		validClass:'success',
+		errorElement: "em",
+		onfocusout: function(element){ $(element).valid(); },
+		 submitHandler: function(form) {
+			 $.post('__GROUP__/public/checkreg',$('form').serialize(),function(data){
+				 if(data.status==1){
+					 window.location.href='{:U('home/index')}';
+					 }else{
+						alert(data.info); 
+					 }
+				 },'json')
+ },
+		rules: {
+			username: { required: true,remote: {
+					url: "{:U('public/checkUsername')}",
+					type: "post",
+					dataType: "json",
+					data: {
+						username: function(){return $("#username").val()},
+					}
+				}
+			},
+			password: { required: true, minlength: 4 ,},
+			repassword: { required: true, minlength: 4,equalTo:"#password"},
+			verify: { required: true},
+			question:{required:true},
+			answer:{required:true},
+			email:{required:true,email:true},
+		},
+		messages: {
+			username: { required: "请输入账户。"},
+			password: { required: "请输入密码", minlength: "密码太短了，最少4位。" },
+			repassword: { required: "请输入重复密码。", minlength: "密码太短了，最少4位。",
+		 equalTo:"两次输入不一致",        
+									},
+					    question:{required:"安全问题有助于你找回密码"},
+			answer:{required:"输入你的答案"},
+			email:{required:"请输入邮箱",email:'邮箱格式不对'},
+			verify: { required: "请输入验证码"}
+		},
+	});
+	
+	
+	
+});
+	</script>
+
+
+<div class="reg_box">
+<h4>用户注册</h4>
+    <div class="item">
+<form action="{:U('public/checkreg')}" method="post" id="regForm">      
+
+<div>
+<div class="item_left">用户名：<span class="must_validate">*</span></div>
+<input name="username" type="text" class="input_input" id="username" autocomplete="off">
+         </div>
+      <div>
+        <div class="item_left">
+          <label for="address">密码：<span class="must_validate">*</span></label>
+        </div>
+          <input name="password" type="password" class="input_input" id="password">
+           
+      </div>
+
+      <div>
+        <div class="item_left">
+          <label for="textfield7">重复密码：<span class="must_validate">*</span></label>
+        </div>
+          <input name="repassword" type="password" class="input_input" id="repassword">
+        </div>
+
+       <div>
+<div class="item_left">提示问题：<span class="must_validate">*</span></div>
+<input type="text" name="question" id="question" class="input_input"></div>
+      <div>
+<div class="item_left">答案：<span class="must_validate">*</span></div>
+<input type="text" name="answer" id="answer" class='input_input'></div>
+      <div>
+<div class="item_left">邮箱：<span class="must_validate">*</span></div>
+<input type="text" name="email" id="email" class="input_input"></div>
+
+      <div>
+<div class="item_left">验证码：<span class="must_validate">*</span></div>
+<label for="verify"></label>
+            <img src="{:U('public/verify.jpg')}" id="verify_button">
+          <input name="verify" type="text" id="verify" size="10" class="input_verify">
+</div>
+
+<div class="clear"></div>
+      <div>
+        <input name="reg_button" type="submit" id="reg_button" value="注册">
+      </div>
+</form>
+    </div>
+
+</div>

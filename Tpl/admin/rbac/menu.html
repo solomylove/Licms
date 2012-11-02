@@ -1,0 +1,33 @@
+<include file="menu:header"/>
+<div id="manage_content">
+<table width="400" border="0">
+  <tr>
+    <td>菜单</td>
+    <td>地址</td>
+    <td>操作</td>
+  </tr>
+  <php>
+         function access_list($data,$sep){
+         foreach($data as $key=>$value){
+             $menu_title=$value['menu_title']; 
+             $menu_id=$value['menu_id'];
+             $menu_name=$value['menu_name'];
+       echo  '<tr>';
+       echo   "<td>$sep$menu_title</td>";
+       echo  "<td>$menu_name</td>";
+       echo "<td><a href=\"__URL__/menu_publish/p_id/$menu_id\" value=\"$menu_id\" class=\"menu_add\">增加子菜单 </a><a href=\"__URL__/menu_del/menu_id/$menu_id\" class='confirm'>删除</a><a href=\"__URL__/menu_edit/menu_id/$menu_id\"> 编辑</a></td>
+       ";
+       echo  "</tr>";  
+             
+              if(isset($value['_child'])){
+                  access_list($value['_child'],$sep.'————');
+              }
+         }
+         
+         }
+    access_list($menu_list,''); 
+    </php>
+</table>
+
+</div>
+<include file="public:footer"/>

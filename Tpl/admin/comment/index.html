@@ -1,0 +1,30 @@
+<include file="menu:header"/>
+<div id="manage_content">
+<script type="text/javascript">
+
+delete_button_url="__GROUP__/comment/del";
+</script>
+<table width="517" border="0">
+  <tr>
+    <td width="115">评论内容</td>
+    <td width="68">ip</td>
+    <td width="158">时间</td>
+    <td width="113">状态</td>
+    <td width="41">操作</td>
+    </tr>
+  <volist name="comment_list" id="vo">
+  <tr>
+    <td><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.comment_id}">
+      <label for="checkbox"></label>
+      {$vo.comment}</td>
+    <td>{$vo.ip}</td>
+    <td>{$vo.create_time|date='y-m-d H:i:s',###}</td>
+    <td><a class="status_button" href="__URL__/pass/comment_id/{$vo.comment_id}">{$vo.status|status}</a></td>
+    <td><a href="#" class="delete_button">删除</a></td>
+    </tr>
+  </volist>
+</table>
+</div>
+<div class="page_show_no_ajax">{$page_show}</div>
+<include  file="public:checkbox_tool"/>
+<include  file="public:footer"/>

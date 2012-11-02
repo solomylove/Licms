@@ -1,0 +1,17 @@
+<include file="public:header"/>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$('#search_button').click(function(){
+		
+		$.get('__URL__/ajaxManage',$('form').serialize(),function(data){
+			$('#manage_content').html(data);
+			})
+		});
+	
+	});
+</script>
+<include file="layout:analyze"/>
+<include file="public:footer"/>

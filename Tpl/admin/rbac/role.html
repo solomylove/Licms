@@ -1,0 +1,18 @@
+<include file="menu:header"/>
+<div id="manage_content">
+  <table width="510" border="0">
+    <tr>
+      <td width="281" height="31">角色名</td>
+      <td width="219">操作</td>
+    </tr>
+    <tbody>
+      <volist name="role_list" id="vo">
+        <tr>
+          <td height="35"><a>{$vo.role_title}</a> </td>
+          <td><a href="__URL__/roleDel/role_id/{$vo.role_id}" class='confirm'>删除</a><a href="__URL__/role_edit/role_id/{$vo.role_id}"> 编辑</a><a href="__URL__/role_access/role_id/{$vo.role_id}"> 分配权限</a><a href="__URL__/role_menu/role_id/{$vo.role_id}"> 分配菜单</a></td>
+        </tr>
+  </volist>
+  </tbody>
+  </table>
+</div>
+<include file="public:footer"/>

@@ -1,0 +1,124 @@
+从<label for="select"></label>
+<select name="year1" id="year1">
+</select>
+年
+<label for="select2"></label>
+<select name="month1" id="month1">
+</select>
+月
+
+<select name="day1" id="day1">
+</select>
+日 
+
+<strong>至</strong>
+<select name="year2" id="year2">
+</select>
+年
+<label for="select2"></label>
+<select name="month2" id="month2">
+</select>
+月
+<select name="day2" id="day2">
+</select>
+日
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	
+var d=new Date();
+
+var year=d.getFullYear();
+
+var i;
+
+//年份
+
+var year_html='<option></option>';   
+ for(i=year-4;i<=year+10;i++){
+	 
+	     year_html+='<option value="'+i+'">'+i+'</option>';
+}	
+
+		$('#year1').html(year_html);
+		$('#year2').html(year_html);
+   
+  //月份 
+  
+   var month_html="<option> </option>";
+  
+  for(i=1;i<=12;i++){
+	  
+	  month_html+='<option value="'+i+'">'+i+'</option>';
+	  
+	  }
+	  
+	  $('#month1').html(month_html);
+	  $('#month2').html(month_html);
+
+
+  $('#month1').change(function(){
+	  
+	  
+	  var year=$(this).val();
+	  
+	  var month=$('#month1 option:selected').val()
+	  
+	  $('#day1').html(monthSelected(year,month));	  
+	  
+	  });
+	  
+	  
+	  $('#month2').change(function(){
+	  
+	  
+	  var year=$(this).val();
+	  
+	  var month=$('#month2 option:selected').val()
+	  
+	  $('#day2').html(monthSelected(year,month));	  
+	  
+	  });
+		   
+});
+
+    
+	function monthSelected(year,month){
+		    
+	    var day;
+		
+		if(month==2){
+			
+		   if(year%4==0){
+			   
+			   day=29;
+			   }else{
+				   day=28;
+				   
+				   }
+			}else{
+				
+					
+			if(month%2==1){
+				 
+				 day=31
+				}else{
+					day=30;
+					}
+				}
+		
+	   var i;
+	   
+	   var html='<option></option>'
+	   for(i=1;i<=day;i++){
+		   
+		   html+='<option value="'+i+'">'+i+'</option>';
+		   }
+		  
+		  return html;
+		}
+
+		
+</script>

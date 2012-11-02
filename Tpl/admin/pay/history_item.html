@@ -1,0 +1,23 @@
+<table width="921" border="0">
+  <tr>
+    <td width="113">用户名</td>
+    <td width="92">支付积分</td>
+    <td width="203">支付时间</td>
+    <td width="229">在文章</td>
+    <td width="262">操作</td>
+  </tr>
+  <volist name="pay_list" id="vo">
+    <tr>
+    <td><input name="checkbox" type="checkbox" id="checkbox" value="{$vo.pay_id}">
+      <label for="checkbox"></label>
+      {$vo.username}</td>
+    <td>{$vo.pay}</td>
+    <td>{$vo.create_time|date="y-m-d H:i:s",###}</td>
+    <td>{$vo.article_title}</td>
+    <td><a href="" class="delete_button">删除</a></td>
+    </tr>
+  </volist>
+
+</table>
+<div class="checkbox_tool"><include file="public:checkbox_tool"/></div>
+<div class="page_show">{$page_show}</div>

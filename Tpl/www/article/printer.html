@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+
+
+
+<style type="text/css">
+.info {
+	border-bottom-width: 2px;
+	border-bottom-style: double;
+	border-bottom-color: #808080;
+	text-align:center;
+}
+
+
+	
+
+.content{
+	text-align:left;
+	word-wrap: break-word;
+}
+
+.printer{
+	margin-left:50px;
+	margin-right:50px;
+	width:700px;
+	text-align:center;	
+	}
+</style>
+<div class="printer">
+  <h1>{$a.article_title}</h1>
+  <div class="info"><notempty name="a['author']">作者：{$a.author}</notempty></div>
+  <div class="content">{$a.content}</div>
+</div>
+
+</body>
+</html>

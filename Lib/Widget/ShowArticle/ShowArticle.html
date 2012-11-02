@@ -1,0 +1,14 @@
+<style type="text/css">
+.alist_font {
+	font-size: 12px;
+	color: #436373;
+}
+</style>
+
+<empty name="article_list">抱歉，没有找到你需要的内容</empty>
+
+<ul>
+<volist name="article_list" id="vo">
+<li><a href="__APP__/article/show/article_id/{$vo.article_id}" class="alist_font" target="_blank">{$vo.article_title|msubstr=0,20,'utf-8',false}</a><li>
+</volist>
+</ul>

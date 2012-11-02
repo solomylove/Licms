@@ -1,0 +1,35 @@
+
+<include file="public:header"/>
+
+<div class="submenu_tool"><form action="" method="get"><include file="public:time_tool"/>
+  <input type="button" name="search_button" id="search_button" value="查询"></form>
+</div>
+<div id="manage_content"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	 ajaxManageContent();
+	
+	 $('#search_button').click(function(){
+		 
+		 
+		 ajaxManageContent();
+		 
+		 });
+	});
+	
+	
+function ajaxManageContent(){
+	
+	url='__GROUP__/user/ajaxUserMoneyHistory/user_id/{$_GET.user_id}?'+$('form').serialize();
+	$.get(
+	url,
+	function(data){
+		
+		$('#manage_content').html(data);
+		
+		});
+	}
+</script>
+<include file="public:footer"/>

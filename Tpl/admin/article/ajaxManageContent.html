@@ -1,0 +1,26 @@
+<table width="879" height="82" border="0">
+<tr>
+  <td>id</td>
+  <td height="21">文章标题</td>
+  <td>发布人</td>
+  <td>发布时间</td>
+  <td>状态</td>
+  <td>操作</td>
+  </tr>
+<volist name="article_list" id="vo">
+  <tr height="21">
+    <td width="108"><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.article_id}">
+      {$vo.article_id}</td>
+    <td width="179"><php>echo msubstr($vo['article_title'],0,10)</php></td>
+    <td width="99">{$vo.username}</td>
+    <td width="167">{$vo.create_time|date="y-m-d H:i:s",###}</td>
+    <td width="113"><a href="__URL__/pass/article_id/{$vo.article_id}" class="status_button">{$vo.status|status}</a></td>
+    <td width="187"><a href="__GROUP__/article/edit/article_id/{$vo.article_id}">编辑 </a><a href="#" class="delete_button"> 删除 </a></td>
+    </tr>
+
+</volist>
+</table>
+<div class="minfoot">
+<div class="page_show">{$page_show}</div>
+<include file="public:checkbox_tool"/>
+</div>

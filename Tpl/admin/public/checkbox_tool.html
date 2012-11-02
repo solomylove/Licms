@@ -1,0 +1,28 @@
+<div class="checkbox_tool"><a href="#" onclick="checkAll()">全选</a> <a href="#" onClick="checkNot()">不选</a><a href="#"  onClick="checkOther()"> 反选</a>
+  <script type="text/javascript">
+
+
+function checkAll(){
+	 
+
+		  $(':checkbox').attr('checked',true);
+	
+	}
+	
+	
+function checkNot(){
+	
+	
+		  $(':checkbox').attr('checked',false);
+	}
+	
+	
+	
+function checkOther(){
+	
+	 $(':checkbox').each(function(){
+		  this.checked=!this.checked;
+		 });
+	
+	}	
+</script><a href="javascript:deleteSelect()" >删除选中</a></div>

@@ -1,0 +1,14 @@
+<table width="234" border="0">
+  <tr>
+    <td width="99" height="27">业务员</td>
+    <td width="125"> 发展用户总数</td>
+  </tr>
+<volist name="user_list" id="vo">
+
+  <tr>
+    <td>{$vo.username}</td>
+    <td>{$vo.user_publish_count}</td>
+    </tr>
+</volist>
+</table>
+<div class="page_show">{$page_show}</div>

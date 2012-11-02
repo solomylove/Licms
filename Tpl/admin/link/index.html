@@ -1,0 +1,23 @@
+<include file="link:header"/>
+<table width="730" border="0">
+  <tr>
+    <td width="82">id</td>
+    <td width="181">网站</td>
+    <td width="126">地址</td>
+    <td width="89">logo</td>
+    <td width="115">状态</td>
+    <td width="111">操作</td>
+  </tr>
+  <volist name="link_list" id="vo">
+  <tr>
+    <td>{$vo.link_id}</td>
+    <td><a href="{$vo.link_href}">{$vo.link_title}</a></td>
+    <td><a href="$vo.link_href" target="_new">{$vo.link_href}</a></td>
+    <td>{$vo.logo}</td>
+    <td><a href="__URL__/pass/link_id/{$vo.link_id}" class="status_button">{$vo.status|status}</a></td>
+    <td><a href="__URL__/del/link_id/{$vo.link_id}" class="confirm">删除</a><a href="__URL__/edit/link_id/{$vo.link_id}"> 编辑</a></td>
+    </tr>
+</volist>
+</table>
+
+<include file="public:footer"/>

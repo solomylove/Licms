@@ -1,0 +1,70 @@
+    <label for="select7"></label>
+     <select name="hospital_id" id="hospital"></select>
+    <label for="select8"></label>
+    
+     <script type="text/javascript">
+ 
+    
+	var hosptial="{$hospital_id}";
+ 
+ $(document).ready(function(){
+	 
+	 
+	 
+	  getHospitals($('#cities option:selected').val());
+	 
+	 
+	 
+	 });
+ 
+ 
+ 
+ 
+ $('#cities option').live('click',function(){
+	 
+	   var id =$(this).val();
+	   
+	   getHospitals(id);
+       
+	 
+	 });
+ 
+ 
+ 
+function getHospitals(id){
+	
+		var url='__GROUP__/public/ajax_gethospital';
+	   
+	   var html;
+	   
+	   $.getJSON(url,{city_id:id},function(json){
+		   
+		   
+		       if(json.status=='1'){  //请求成功
+			
+			    $.each(json.data,function(index,value){
+					
+					
+					html+='<option value="'+value.hospital_id+'">'+value.hospital_title+'</option>';           
+
+			   
+			   })}else{
+				   
+				        
+					html='<option value="">暂无数据</option>';
+				   
+			   }    
+						 		  
+		         $('#hospital').html(html);
+
+		   });
+		  
+
+
+	
+	
+	}
+ 
+ 
+ </script>    
+           

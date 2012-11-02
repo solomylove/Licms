@@ -1,0 +1,7 @@
+<div class="foot"><p>南充市计算发展协会qq群：145070729</p>
+<php>$link_list=a('www/link')->getList(array('limit'=>10))</php>
+<div><span>友情链接：</span><volist name="link_list" id="vo"><a href="{$vo.link_href}" target="_new">{$vo.link_title} </a></volist><a><a href="{:U('link/publish')}">申请链接</a></a></div>
+<span>
+<php>$alist=M('category')->where(array("p_id"=>104))->select();</php>
+<volist name="alist" id="vo" key="k"><if condition='$k neq 1' >|</if><a href="{$vo|create_category_url_one}">{$vo.category_title}</a></volist></span>
+</div>

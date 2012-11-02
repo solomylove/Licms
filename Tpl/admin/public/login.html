@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>licms后台登陆</title>
+<load href="__STATICS__/js/jquery.min.js"/>
+<load href="__STATICS__/js/common.js"/>
+<style type="text/css">
+.login_box {
+	position:absolute;
+	left:500px;
+	top:100px;
+	background-color: #000;
+	color: #FFF;
+}
+
+
+h4{
+	color:#F00	;
+	border-bottom:#F00 solid 1px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login_box">
+<h4 >licms后台登入</h4>
+  <form name="form1" method="post" action="__URL__/checklogin">
+    <table width="385" border="0">
+      <tr>
+        <td width="131" height="47"><strong>用户名</strong></td>
+        <td width="244"><input name="username" type="text" id="username"/></td>
+      </tr>
+      <tr>
+        <td height="41"><strong>密码</strong></td>
+        <td><input name="password" type="password" id="password"/></td>
+      </tr>
+      <tr>
+        <td height="39">验证码</td>
+        <td><label for="verify"></label>
+        <input name="verify" type="text" id="verify" size="10"><img src="{:U('public/verify.jpg')}" id="verify_button" > </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="input" type="submit" value="登陆" /></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<include file="public:header"/>
+<div class="submenu_tool">
+<form action="" method="get">  <table width="1094" height="134" border="0">
+    <tr>
+      <td width="131" height="42">地区：</td>
+      <td width="667">{:W('ShowArea')} </td>
+      <td width="282">账户名
+        <input type="text" name="keyword" id="keyword">
+        <input type="button" name="search_button" id="search_button" value="查询"></td>
+    </tr>
+
+    <tr>
+      <td height="42">注册时间：</td>
+      <td><include file="public:time_tool"/></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</form>
+
+</div>
+
+
+ <div id="manage_content"></div>
+  
+  <include file="public:checkbox_tool"/>
+  
+  <include file="public:footer"/>
+  
+  
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	 ajaxManageContent();
+	
+	 $('#search_button').click(function(){
+		 
+		 
+		 ajaxManageContent();
+		 
+		 });
+	});
+	
+	
+function ajaxManageContent(){
+	
+	url='__GROUP__/user/ajaxManageContent';
+	$.get(
+	url,
+		$('form').serialize(),
+	function(data){
+		
+		$('#manage_content').html(data);
+		
+		});
+	    
+	}
+
+
+
+
+</script>
+

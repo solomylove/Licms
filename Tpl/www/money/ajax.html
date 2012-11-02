@@ -1,0 +1,17 @@
+<table width="720" border="0">
+  <tr>
+    <td width="146">充值金额</td>
+    <td width="246">充值时间</td>
+    <td width="314">兑换积分</td>
+  </tr>
+      <tbody>
+<volist name="money_list" id="vo">
+  <tr>
+    <td>{$vo.money}</td>
+    <td>{$vo.create_time|date="y-m-d H:i:s",###}</td>
+    <td>{$vo.score}</td>
+  </tr>
+</volist>
+</tbody>
+</table>
+<div class="page_show"><empty name="money_list">没有相关记录</empty>{$page_show}</div>

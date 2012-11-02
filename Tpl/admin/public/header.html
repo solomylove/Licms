@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>licms</title>
+<load href="__STATICS__/js/jquery.min.js"/>
+<load href="__STATICS__/js/common.js"/>
+<load href="__STATICS__/css/reset.css"/>
+<load href="__STATICS__/admin/css/base.css"/>
+<load href="__STATICS__/admin/css/ifame.css"/>
+<load href="__STATICS__/admin/js/ifame.js"/>
+<script type="text/javascript">
+delete_button_url="{$delete_button_url}";
+</script>
+
+
+
+
+</head>
+
+<div class="submenu"><h4 class="submenu_title">当前操作：
+
+<php>
+
+foreach($submenu_title as $key=>$value){
+      
+      if($key==0){
+       $str=$value['menu_title'];
+      }else{
+       $str.='-'.$value['menu_title'];
+      }
+
+
+}
+
+echo $str;
+
+</php>
+
+
+
+</h4></div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	setInterval(function(){
+		var width=document.body.offsetHeight;
+		width=width>500?width:500;
+		self.parent.document.getElementById('content').style.height=width+"px";
+		},500);
+
+
+	
+	});
+
+
+
+
+
+
+</script>

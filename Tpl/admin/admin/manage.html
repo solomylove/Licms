@@ -1,0 +1,49 @@
+<assign name="delete_button_url" value="__URL__/del"/>
+<include file="menu:header"/>
+<script type="text/javascript">
+admin_manage()
+$(document).ready(function(){
+	$('#search_button').click(function(){
+		admin_manage();
+		
+		});
+
+	});
+	
+	
+	function admin_manage(){
+		$.get('{:U('ajax_manage')}',$('form').serialize(),function(data){
+			$('#manage_content').html(data);
+			});
+		}
+</script>
+
+<div class="submenu_tool">
+<form action="" method="get">  <table width="1099" border="0">
+    <tr>
+      <td width="133" height="34">用户类型：</td>
+      <td width="561"><select name="role_id">
+      <option value="">不限</option>
+      <volist name="role_list" id="vo">
+     <option value="{$vo.role_id}">{$vo.role_title}</option>
+     </volist> 
+      </select></td>
+      <td width="391">用户名：
+        <label for="keyword"></label>
+      <input type="text" name="keyword" id="keyword">
+      <input type="button" name="search_button" id="search_button" value="搜索"></td>
+    </tr>
+    <tr>
+      <td>地区：</td>
+      <td>{:W('ShowArea')}</td>
+      <td>&nbsp;</td>
+    </tr>
+        <tr>
+      <td height="37">添加时间：</td>
+      <td><include file="public:time_tool"/></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table></form>
+</div>
+<div id="manage_content"></div>
+<include file="public:footer"/>

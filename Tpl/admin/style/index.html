@@ -1,0 +1,28 @@
+<include file="menu:header"/>
+<div id="manage_content">
+<table width="1084" border="0">
+  <tr>
+    <td width="97">id</td>
+    <td width="157">中文</td>
+    <td width="128">英文</td>
+    <td width="141">值</td>
+    <td width="154">操作</td>
+    <td width="381">上传</td>
+    </tr>
+    <volist name="style_list" id="vo">
+  <tr>
+    <td>{$vo.id}</td>
+    <td>{$vo.title}</td>
+    <td>{$vo.name}</td>
+    <td>{$vo.value|default="默认"}</td>
+    <td><p><a href="__URL__/del/id/{$vo.id}" class="delete_confirm">删除 </a><a href="__URL__/sreset/id/{$vo.id}"> 重置</a></p></td>
+    <td><form action="__URL__/upload/id/{$vo.id}" method="post" enctype="multipart/form-data" name="form1">
+      <label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField">
+      <input type="submit" name="button" id="button" value="上传">
+    </form></td>
+    </tr>
+    </volist>
+</table>
+</div>
+<include file="public:footer"/>

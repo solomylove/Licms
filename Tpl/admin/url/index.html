@@ -1,0 +1,24 @@
+<include file="menu:header"/>
+
+<table width="636" border="0">
+  <tr>
+    <td width="137">模块</td>
+    <td width="146">原url</td>
+    <td width="155">解析为</td>
+    <td width="180">操作</td>
+    <td width="180">状态</td>
+  </tr>
+  
+<volist name="url_list" id="vo">
+  <tr>
+    <td>&nbsp;</td>
+    <td>{$vo.url}</td>
+    <td>{$vo.rewrite}</td>
+    <td><a href="__URL__/del/id/{$vo.id}" class="confirm">删除</a></td>
+    <td><a href="__URL__/status/id/{$vo.id}" class="status_button"><php>if($vo['status']=='1'){echo '已应用';}else{echo '未应用';}</php></a></td>
+  </tr>
+ </volist>
+</table>
+
+
+<include file="public:footer"/>

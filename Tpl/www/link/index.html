@@ -1,0 +1,16 @@
+<layout name="link_layout"/>
+<div class="in_s_box">
+<volist name="ll_list" id="vo">
+<div class="in_item">
+<h3 ><a class="in_title" href="{$vo|site_url_category}">[{$vo.category_title}]</a> </h3>
+<ul class="in_cen_de">
+<volist name="vo['_child']" id="vo1">
+<li class="in_de"><a href="{$vo1.link_href}" class="link_font">{$vo1.link_title}</a></li>
+</volist>
+</ul>
+<a href="{$vo|site_url_category}" class="link_more">更多&gt;&gt;</a>
+</div>
+</volist>
+</div>
+
+

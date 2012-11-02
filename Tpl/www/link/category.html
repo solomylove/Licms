@@ -1,0 +1,52 @@
+
+<layout name="link_layout"/>
+
+
+
+<php>$c=A('www/link')->getListSon(array('category_id'=>$_GET['category_id']))</php>
+
+
+<style>
+
+
+.in_title{
+	    color: #FF7F00;
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+	}
+	
+	
+	.in_cen_de {
+    clear: both;
+    margin-left: 50px;
+    margin-top: 10px;
+	height:300px;
+}
+
+.in_s_box{
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
+	}
+	
+.in_h{
+	
+	
+		background:none repeat scroll 0 0 #F1F5F5;}	
+</style>
+
+
+<div class="in_s_box">
+<div class="in_item">
+<h3 class="in_h"><span class="in_title" href="{$cate|site_url_category}">
+{$cate.category_title}&gt;&gt;</span></h3>
+<ul class="in_cen_de">
+<volist name="c" id="vo1">
+<li class="in_de"><a href="{$vo1.link_href}" class="link_font">{$vo1.link_title}</a></li>
+</volist>
+</ul>
+</div>
+
+</div>

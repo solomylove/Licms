@@ -1,0 +1,53 @@
+
+<layout name="login_layout"/>
+<style type="text/css">
+.article_preview {
+	margin-top:40px;
+}
+.article_preview_head{
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	color: #396;
+	}
+.article_preview_content {
+	font-size: 13px;
+	font-family: "Times New Roman", Times, serif;
+	color: #333;
+	font-weight: lighter;
+}
+.a_tip{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 11px;
+	}
+.page_show{
+	text-align:right;
+}
+
+.article_title{
+	font-size:18px;
+	text-decoration: underline;
+	}
+	
+.asbox{
+	width:800px;
+	float:left;
+	margin-top:20px;
+	
+}
+</style>
+
+
+<div class="asbox"><span class="search_tip">你输入的<span style="color:red"> {$_GET['keyword']}</span> 匹配到<span style="color:red">{$search_count}</span>条记录</span>
+<volist  name="article_list" id="vo">
+<div class="article_preview">
+<div class="article_preview_head"><a href="__APP__/article/show/article_id/{$vo.article_id}" target="_blank" class="article_title">{$vo.article_title}</a><span class="a_tip">阅读{$vo.read_count}次   </span></div>
+<div class="article_preview_content">   {$vo.content}</div>
+</div>
+</volist>
+<div class="page_show">{$page_show}</div></div>

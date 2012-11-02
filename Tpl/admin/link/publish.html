@@ -1,0 +1,37 @@
+<include file="link:header"/>
+<div><form action="__URL__/{$target}" method="post" enctype="multipart/form-data">
+  <table width="400" border="0">
+    <tr>
+      <td>分类：</td>
+      <td>{:W('AdminTool',array('_tool'=>'chooseCategory','checked_id'=>$link['category_id'],'_root_id'=>113))}</td>
+    </tr>
+    <tr>
+      <td>网站名字：</td>
+      <td><label for="link_title"></label>
+        <input name="link_title" type="text" id="link_title" value="{$link.link_title}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>网站链接：</td>
+      <td><label for="link_href"></label>
+        <input name="link_href" type="text" id="link_href" value="{$link.link_href}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>网站logo：</td>
+      <td><label for="logo"></label>
+        <label for="logo"></label>
+        <label for="logo"></label>
+        <input name="logo" type="text" id="logo" value="{$link.logo}" class="input_input">
+        <label for="textfield"></label></td>
+    </tr>
+    <tr>
+      <td>网站介绍：</td>
+      <td><label for=""></label>
+        <input name="description" type="text" id="description" value="{$link.description}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="提交"></td>
+    </tr>
+  </table>
+</form></div>
+<include file="public:footer"/>

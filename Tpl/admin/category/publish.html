@@ -1,0 +1,46 @@
+<include file="menu:header"/>
+<form action="__GROUP__/category/{$target}" method="post" enctype="multipart/form-data" name="form1">
+<table width="898" border="0">
+  <tr>
+    <td width="123">栏目名：</td>
+    <td width="765">
+      <label for="category_title"></label>
+      <input name="category_title" type="text" id="category_title" value="{$category.category_title}" class="input_input">
+  </td>
+  </tr>
+  <tr>
+    <td>url规则：</td>
+    <td><label for="url_rule"></label>
+      <input name="url_rule" type="text" id="url_rule" value="{$category.url_rule}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td>类型：</td>
+    
+    
+    <td><select name="type"><volist name="category_type" id="vo">
+    
+    <if condition="$category['type'] eq $key">
+      <option value="{$key}" selected>{$vo}</option>
+    <else/>
+      <option value="{$key}" >{$vo}</option>
+    </if>
+  
+    
+    
+    </volist></select></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <input type="submit" name="button" id="button" value="提交" class="bn">
+      <input name="category_id" type="hidden" id="category_id" value="{$_GET.category_id}">
+      <input name="p_id" type="hidden" id="p_id" value="{$_GET.p_id}"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</form>
+<include file="public:footer"/>

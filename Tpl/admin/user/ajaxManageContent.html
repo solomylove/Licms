@@ -1,0 +1,79 @@
+  <table width="980" border="0">
+    <tr>
+      <td>用户名</td>
+      <td>注册时间</td>
+      <td>操作</td>
+    </tr>
+    <volist name="user_list" id="vo">
+      <tr>
+        <td width="166">
+          <input type="checkbox" name="user_id" id="user_id" value="{$vo.user_id}">
+        {$vo.username}</td>
+        <td width="172">{$vo.create_time|date="y-m-d H:i:s",###}</td>
+        <td width="628"><a href="__GROUP__/user/profile/user_id/{$vo.user_id}" target="_blank">查看资料 </a><a href="__GROUP__/user/password/user_id/{$vo.user_id}">修改密码 </a>
+       <a href="javascript:updateScore('{$vo.user_id}')"> 修改积分 </a><a href="#" class="delete_button"></a><a href="javascript:updateScorePay('{$vo.user_id}')">修改扣分规则</a><a href="javascript:money('{$vo.user_id}');"> 充值</a><a href="__GROUP__/user/userMoneyHistory/user_id/{$vo.user_id}" target="_blank"> 充值记录</a><a href="__GROUP__/user/userPayHistory/user_id/{$vo.user_id}" target="_blank"> 支付记录 </a><a href="#" class="delete_button">删除</a></td>
+      </tr>
+    </volist>  </table>
+<div class="page_show">{$page_show}</div>
+    
+ <script type="text/javascript">
+
+ 
+ 
+ function money(user_id){
+	 
+      var money= window.prompt("输入你要充值的金额",'');
+     
+	  if(money!==null){
+		  
+		  
+		  var url="__GROUP__/user/money";
+		  $.post(
+		  url,
+		  {'money':money,
+		   'user_id':user_id,
+		  },
+		  function(json){
+			  
+			  alert(json.info);
+		  
+		  },"json");
+	  }
+	 }
+	 
+	 
+	 
+	 function updateScore(user_id){
+	 
+      var money= window.prompt("输入用户积分",'');
+     
+	  if(money!==null){
+		  var url="__GROUP__/user/updateScore";
+		  $.post(
+		  url,
+		  {'score':money,
+		   'user_id':user_id,
+		  },
+		  function(json){
+			  alert(json.info);
+		  },"json");
+	  }
+ 
+	 } 
+	 
+    function updateScorePay(user_id){	 
+      var money= window.prompt("输入扣分规则",'');
+	  if(money!==null){
+		  var url="__GROUP__/user/updateScorePay";
+		  $.post(
+		  url,
+		  {'score_pay':money,
+		   'user_id':user_id,
+		  },
+		  function(json){
+			  alert(json.info);
+		  },"json");
+	  }
+		}
+	 
+ </script> 

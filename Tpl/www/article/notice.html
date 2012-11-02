@@ -1,0 +1,112 @@
+<include file="public:header"/>
+<load href="__STATICS__/css/default.css"/>
+<style type="text/css">
+
+
+
+.small_body{
+	text-align:center;
+	}
+	
+	
+.printer_notice	{
+	border: 1px solid  #2A0055;
+	text-align:left;
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:150px;
+	z-index:400;
+		}
+.small_notice{
+	color:red;
+	}		
+		
+		
+</style>
+
+<object  id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0> 
+  <embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0></embed>
+</object>
+
+<script type="text/javascript">
+function getLodop(oOBJECT,oEMBED){
+/**************************
+  本函数根据浏览器类型决定采用哪个对象作为控件实例：
+  IE系列、IE内核系列的浏览器采用oOBJECT，
+  其它浏览器(Firefox系列、Chrome系列、Opera系列、Safari系列等)采用oEMBED。
+**************************/
+        var strHtml1="<br><font color='#FF00FF'>打印控件未安装!点击这里<a href='__STATICS__/install_lodop.exe'>执行安装</a>,安装后请刷新页面或重新进入。</font>";
+        var strHtml2="<br><font color='#FF00FF'>打印控件需要升级!点击这里<a href='__STATICS__/install_lodop.exe'>执行升级</a>,升级后请重新进入。</font>";
+		 var strHtml3="<br><br><font color='#FF00FF'>注意：<br>1：如曾安装过Lodop旧版附件npActiveXPLugin,请在【工具】->【附加组件】->【扩展】中先卸它;<br>2：";
+        var LODOP=oEMBED;		
+	try{		     
+	     if (navigator.appVersion.indexOf("MSIE")>=0) LODOP=oOBJECT;
+
+	     if ((LODOP==null)||(typeof(LODOP.VERSION)=="undefined")) {
+		 if (navigator.userAgent.indexOf('Firefox')>=0)
+  	         document.documentElement.innerHTML=strHtml3+document.documentElement.innerHTML;
+		 if (navigator.appVersion.indexOf("MSIE")>=0) document.write(strHtml1); else
+		 document.documentElement.innerHTML=strHtml1+document.documentElement.innerHTML;
+		 return LODOP; 
+	     } else if (LODOP.VERSION<"6.0.5.6") {
+		 if (navigator.appVersion.indexOf("MSIE")>=0) document.write(strHtml2); else
+		 document.documentElement.innerHTML=strHtml2+document.documentElement.innerHTML; 
+		 return LODOP;
+	     }
+	     //*****如下空白位置适合调用统一功能:*********	     
+
+	     //*******************************************
+	     return LODOP; 
+	}catch(err){
+	     document.documentElement.innerHTML="Error:"+strHtml1+document.documentElement.innerHTML;
+	     return LODOP; 
+	}
+}
+
+var LODOP=getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));
+
+
+
+function printer(){
+	
+	var url="__URL__/printer/article_id/{$_GET.article_id}";
+	
+	$.get(url,function(json){
+		
+		     if(json.status==1){
+				  myPreview(json.data);
+			 }else if(json.status==0){
+					alert(json.info);
+					window.location.href="{:U('money/index')}";
+				 };
+		
+		},"json");
+}
+
+
+
+
+  function myPreview(data) { 
+    LODOP.PRINT_INIT("");
+    LODOP.ADD_PRINT_HTM(40,2,1200,1000,data);
+    LODOP.PREVIEW();
+  };
+</script>
+<div class="small_body">
+  <div class="printer_notice">
+    <h4>医学网打印提示：</h4>
+    <p>&nbsp;</p>
+    <div class="small_notice">
+  <notempty name="user_score"><span style="color:red">你目前积分剩余：{$user_score}  <a href="{:U('www/money')}" target="_blank">请先充值!</a></span></notempty>
+      <notempty name="pay_history">你上次打印时间{$pay_history.create_time|date='y-m-d H:i:s',###}，三分钟内不会扣费</notempty>
+    </div>
+    <notempty name='limit'><p>该篇文章需要支付积分： {$limit.score_pay}</notempty>
+    <p><a href="#" onClick="printer()">确认 </a></p>
+  </div>
+</div>
+<include file="public:footer"/>
+
+
+
+

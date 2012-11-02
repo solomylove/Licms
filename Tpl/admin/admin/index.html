@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>licms</title>
+<script type="text/javascript" src="__STATICS__/js/jquery.min.js"></script>
+<load href="__STATICS__/css/reset.css"/>
+<load href="__STATICS__/admin/css/base.css"/>
+<load href="__STATICS__/admin/css/index.css"/>
+<load href="__STATICS__/admin/js/index.js"/>
+</head>
+<body>
+  <div class="head">
+  <div class="logo"></div>
+    <ul class="topmenu">  <li><a>你好:{$_SESSION.username}</a></li>
+      <li><a>上次登录：{$_SESSION.last_login_time|date='y-m-d H:i:s',###}</a></li>  
+      
+      
+           <li><a href="__APP__" target="_new">首页</a></li>
+      
+         <li><a href="javascript:menu('','__GROUP__/public/showDefault/')">帮助</a></li>
+       <li><a href="javascript:menu('','__GROUP__/password/index')">修改密码</a></li>
+       <li><a href="javascript:menu('','__GROUP__/filecache/index')">更新缓存</a></li>
+    <li><a><a href="__GROUP__/public/logout">退出</a></a></li></ul>
+  </div>
+  <div class="body">
+  
+  <div class="clear"></div>
+  <div class="usermenu">
+    <php>
+      foreach($menu as $key1=>$value1){
+        echo '<div class="mainmenu">';
+        $menu_title=$value1['menu_title'];
+        echo "<h4 class='mainmenu_font'>$menu_title</h4>";
+        
+          if(is_array($value1['_child'])){
+          echo "<ul>";
+          foreach($value1['_child'] as $key2 =>$value2){
+          $url='__GROUP__/'.$value2['menu_name'];
+          $menu_title=$value2['menu_title'];
+          $menu_id=$value2['menu_id'];
+          echo "<li><a href='javascript:menu(\"$menu_id\",\"$url\")'>$menu_title</a></li>";
+          }
+                    echo "</ul>";
+          }
+        	
+        echo "</div>";
+        }
+    </php>
+  </div>
+  <script type="text/javascript">
+  
+  	function iFrameHeight() { 
+		var ifm= document.getElementById("content");   
+		var subWeb = document.frames ? document.frames["content"].document : ifm.contentDocument;   
+		if(ifm != null && subWeb != null) {
+		   ifm.height = subWeb.body.scrollHeight;
+		}   
+	}   
+  
+  </script>
+  
+<iframe src="__GROUP__/public/showDefault" frameborder="0" id="content" name="content" style=" height:500px" scrolling="no"></iframe>
+</div>
+<div class="clear"></div>
+<div class="foot">开源与免费是我们贡献的动力</div>
+</body>
+</html>

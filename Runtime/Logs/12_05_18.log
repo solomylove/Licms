@@ -1,0 +1,38 @@
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --START--
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Run CheckRoute Behavior [ RunTime:0.001660s ]
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --END-- [ RunTime:0.001825s ]
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --START--
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000694s ]
+[ 2012-05-18T13:14:05+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000779s ]
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Tag[ route_check ] --START--
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Run CheckRoute Behavior [ RunTime:0.001336s ]
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Tag[ route_check ] --END-- [ RunTime:0.001464s ]
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Tag[ app_begin ] --START--
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000753s ]
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000848s ]
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: username publicAction.class.php 第 139 行.
+[ 2012-05-18T13:14:11+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Use of undefined constant NOT_AUTH_MODULE - assumed 'NOT_AUTH_MODULE' wbaseAction.class.php 第 90 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | ERR: (ThinkException) Access denied for user 'test1'@'localhost' (using password: YES)
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Tag[ route_check ] --START--
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Run CheckRoute Behavior [ RunTime:0.001437s ]
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Tag[ route_check ] --END-- [ RunTime:0.001595s ]
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Tag[ app_begin ] --START--
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Run ReadHtmlCache Behavior [ RunTime:0.001014s ]
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | INFO: Tag[ app_begin ] --END-- [ RunTime:0.001132s ]
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: username publicAction.class.php 第 138 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: password publicAction.class.php 第 138 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'test1'@'localhost' (using password: YES) DbMysql.class.php 第 67 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: class ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: type ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: class ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: type ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: class ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: type ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: class ThinkException.class.php 第 79 行.
+[ 2012-05-18T18:41:37+08:00 ] /yiyuan/index.php/home | NOTIC: [8] Undefined index: type ThinkException.class.php 第 79 行.
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --START--
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Run CheckRoute Behavior [ RunTime:0.001742s ]
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ route_check ] --END-- [ RunTime:0.001927s ]
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --START--
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Run ReadHtmlCache Behavior [ RunTime:0.000662s ]
+[ 2012-05-18T23:28:07+08:00 ] /yiyuan/index.php/admin | INFO: Tag[ app_begin ] --END-- [ RunTime:0.000741s ]

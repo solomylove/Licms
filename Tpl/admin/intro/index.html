@@ -1,0 +1,36 @@
+
+<include file="menu:header"/>
+
+<div id="manage_content">
+<table width="685" border="0">
+  <tr>
+    <td width="89">id</td>
+    <td width="86">排序</td>
+    <td width="166">科室</td>
+    <td width="109">电话</td>
+    <td width="91">传真</td>
+    <td width="118">操作</td>
+    </tr>
+  
+  
+  <volist name="part" id="vo">
+  <tr>
+    <td><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.id}">
+      <label for="checkbox"></label>
+      {$vo.id}</td>
+    <td class="activeinput" link="__URL__/order/id/{$vo.id}"  iwidth="40px">{$vo.orderid}</td>
+    <td>{$vo.title}</td>
+    <td>{$vo.phone}</td>
+    <td>{$vo.fax}</td>
+    <td><a href="#" class="delete_button">删除 </a><a href="__URL__/edit/id/{$vo.id}">编辑</a></td>
+    </tr>
+  
+  </volist>
+</table>
+</div>
+<div class="minfoot">
+<div class="page_show_no_ajax">{$page_show}</div>
+<include file="public:checkbox_tool"/>
+</div>
+<include file="public:footer"/>
+

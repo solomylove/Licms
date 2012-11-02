@@ -1,0 +1,37 @@
+<include file="menu:header"/>
+ <div id="manage_content">
+
+<table width="481" border="0">
+  <tr>
+    <td width="242">权限名</td>
+    <td width="229">操作</td>
+    <td width="229">&nbsp;</td>
+  </tr>  
+   <php>
+    
+         function access_list($data,$sep){
+         foreach($data as $key=>$value){
+              
+             $access_title=$value['access_title']; 
+             
+             $access_id=$value['access_id'];
+             $p_id=$value['p_id'];
+             $access_name=$value['access_name'];
+       echo  '<tr>';
+       echo   "<td>$sep$access_title</td>";
+       echo  "<td>$access_name</td>";
+       echo "<td><a href='__URL__/accessPublish/p_id/$access_id' class=\"role_add\">增加子权限 </a><a href=\"__URL__/accessDel/access_id/$access_id\" class='confirm'>删除</a><a href=\"__URL__/access_edit/access_id/$access_id/p_id/$p_id\"> 编辑</a></td>";
+       echo  "</tr>";  
+             
+              if(isset($value['_child'])){
+                  access_list($value['_child'],$sep.'————');
+              }
+         }
+         
+         }
+    access_list($access_list,''); 
+    </php>
+    
+</table>
+</div>
+<include file="public:footer"/>

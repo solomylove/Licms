@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<Li:cache>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{:myconfig('site_title')}</title>
+<meta content="{:myconfig('site_keywords')}" name="Keywords">
+<meta name="description" content="{:myconfig('site_description')}" />
+</Li:cache>
+<load href="__STATICS__/js/jquery.min.js"/>
+<load href="__STATICS__/js/common.js"/>
+<load href="__STATICS__/js/MSCLASS.js"/>
+<load href="__STATICS__/css/default.css"/>
+<load href="__STATICS__/css/style.css"/>
+<load href="__STATICS__/css/news.css"/>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(document).keydown(function(event){
+  switch(event.keyCode) {
+	  case 13:
+	      $('#login_button').click();
+  }
+
+});
+	
+	
+	$('#login_username').val(getCookie('username'));
+	$('#loginbutton').click(function(){
+		$.post("{:U('public/checklogin')}",{
+			username:$('#login_username').val(),
+			password:$('#login_password').val(),			
+			remeber:function(){if($('#remeber').attr('checked')){ return '1'}},
+			},function(json){
+			if(json.status==1){
+			    if($('#remeber').attr('checked')){
+						setCookie('username',json.data.username,30,'/');
+						setCookie('password',json.data.password,{:C('COOKIE_EXPIRE')},'/');
+					}else{
+						deleteCookie('password');
+						setCookie('username',$('#login_username').val(),30);						
+						}
+					window.location.href="{:U('home/index')}";
+				}else{
+					alert(json.info);
+					}
+			
+			},'json')
+		
+		});
+	});
+	
+</script>
+<div class="login_body">
+    <div class="login_head">
+   <div class="wrap"><a href="/" class="index_font"><img src="__STATICS__/img/logo.png"></a>
+  <div class="search"><form action="__GROUP__/article/search" method="get"><input name="keyword" type="text" id="keyword"><input name="搜索" type="submit" id="搜索" value="搜索"></form></div>
+  <div class="login_quick">
+      <empty name="_SESSION['user_id']"><a id="login_button" href="__GROUP__/public/login">登陆 </a>
+       <a href="{:U('public/reg')}">注册</a>
+       <else/>
+<ul>
+  <li><a href="__GROUP__/home/index">{$_SESSION.username}个人中心</a></li>
+  <li><a href="{:U('public/logout')}">退出</a></li>
+</ul>
+      </empty>
+</div>
+</div>
+</div>
+    <div class="nav">
+      <div class="wrap">
+        <ul>
+          <li><a href="__APP__/news/">新闻</a></li>
+          <li><a href="__APP__/member/">会员</a></li>
+          <li></li>
+          <li><a href="__APP__/doc/">licms教程</a></li>
+          <li><a href="__APP__/feedback/">反馈</a></li>
+          <li><a href="__APP__/link/">南充导航</a></li>
+        </ul>
+      </div>
+  </div>
+    <div class="login_main">
+{__CONTENT__}
+    </div>
+     <include file="public:foot"/>
+  </div>
+</body>
+</html>

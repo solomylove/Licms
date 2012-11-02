@@ -1,0 +1,61 @@
+
+
+
+<load href="__STATICS__/js/jquery.validate.js"/>
+<layout name="login_layout"/>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$.validator.setDefaults({
+		onfocusout:true,
+	});
+	$("#passwordForm").validate({
+		errorClass:'error',
+		validClass:'success',
+		errorElement: "em",
+		onfocusout: function(element){ $(element).valid(); },
+		rules: {
+			password: { required: true, minlength: 4 },
+			repassword: { required: true, minlength: 4 ,equalTo:'#password'},
+			answer:{required:true},
+		},
+		messages: {
+			password: { required: "请输入密码", minlength: "密码太短了，最少4位。" },
+			repassword: { required: "请输入重复密码。", minlength: "密码太短了，最少4位。" , equalTo: "两次密码输入不一致！" },
+		    question:{required:"请输入"},
+			answer:{required:"输入你的答案"},
+		},
+		
+
+
+	});
+	
+});
+	</script>
+<h4>找回密码</h4>
+<div class="password_box">
+  <form action="{:U('step3')}" method="post" id="passwordForm">
+    <table width="577" border="0">
+      <tr>
+        <td width="177">安全问题</td>
+        <td width="390"><input name="question" type="text" id="question" value="{$question}" readonly="readonly"></td>
+      </tr>
+      <tr>
+        <td>答案：</td>
+        <td><input type="text" name="answer" id="answer"></td>
+      </tr>
+      <tr>
+        <td>新密码：</td>
+        <td><input type="password" name="password" id="password"></td>
+      </tr>
+      <tr>
+        <td>重复新密码：</td>
+        <td><input type="password" name="repassword" id="repassword"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" name="password_button" id="password_button" value="找回"></td>
+      </tr>
+    </table>
+  </form>
+</div>

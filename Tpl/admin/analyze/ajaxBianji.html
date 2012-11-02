@@ -1,0 +1,15 @@
+<table width="357" border="0">
+  <tr>
+    <td width="99">编辑 </td>
+    <td width="248">发文章总数</td>
+  </tr>
+<volist name="user_list" id="vo">
+
+  <tr>
+    <td>{$vo.username}</td>
+    <td>{$vo.article_publish_count}</td>
+    </tr>
+  
+</volist>
+</table>
+<div class="page_show">{$page_show}</div>

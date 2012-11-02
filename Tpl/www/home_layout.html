@@ -1,0 +1,32 @@
+<include file="public:header"/>
+<load href="__STATICS__/css/home.css" />
+<div class="head">
+<div class='index'>
+<a href="{:U('public/login')}">南充市计算机发展协会</a></div>
+ 
+ 
+ <div class="topmenu">
+  <ul>
+    <li><a>你好:{$_SESSION.username}</a></li>
+    <li><a  href="/" >首页</a></li>
+    <li><span class="logout_icon"></span><a href="{:U('public/logout')}">退出</a></li>
+  </ul>
+ </div>
+</div>
+<div class="home-content">
+<div class="user_menu">
+  <div>
+    <p><a>功能</a></p>
+    <ul>
+              <li><span class="menu_setting"></span><a  href="{:U('home/profile')}" >设置</a></li>
+     <li><span class="password_icon"></span><a  href="{:U('home/password')}" >修改密码</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="home_show">{__CONTENT__}</div>
+
+</div>
+<include file="public:foot"/>
+<include file="public:footer"/>

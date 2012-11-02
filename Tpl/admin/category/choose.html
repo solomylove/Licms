@@ -1,0 +1,38 @@
+<include file="menu:header"/>
+<table width="1066" border="0">
+  <tr>
+    <td width="95">id</td>
+    <td width="221">栏目名</td>
+    <td width="184">英文名</td>
+    <td width="103">类型</td>
+    <td width="194">重写的url</td>
+    <td width="243">操作</td>
+  </tr>
+   <php>
+function show_list($data,$sep,$category_type){
+      foreach($data  as $list){
+      $category_id=$list['category_id'];
+      $p_id=$list['p_id'];
+      $category_title=$list['category_title'];
+      $url_rule=$list['url_rule'];
+      $rewrite=$list['rewrite'];
+      $type=$category_type[$list['type']];
+      echo "<tr>
+        <td>$category_id</td>
+        <td><span class='category_list'>$sep$category_title</span></td>
+        <td>$url_rule</td>
+        <td>$type</td>
+        <td>$rewrite</td>
+        <td><a href='__GROUP__/category/publish/p_id/$category_id'>添加子栏目 </a><a href='__GROUP__/category/edit/category_id/$category_id/p_id/$p_id'> 编辑</a><a href='__GROUP__/category/del/category_id/$category_id/' class='confirm' > 删除</a></td>
+        </tr>
+      ";
+      if(isset($list['_child'])){
+         show_list($list['_child'],$sep.'————',$category_type);
+      }
+      }
+}
+
+show_list($category_list,'',$category_type); </php>
+</table>
+
+<include file="public:footer"/>

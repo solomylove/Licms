@@ -1,0 +1,16 @@
+<volist name="comment_list" id="vo">
+          <div class="co_list_son"> 
+            <empty name="comment_list">暂无评论~~</empty>
+            <div class="c_info">
+              <ul>
+                <li>{$vo.username}</li>
+                <li>{$vo.create_time|date='y-m-d:Hi:s',###} </li>
+                <li>{$vo.ip|safe_ip}</li>
+                <li>回复[{$vo.reply}]</li>
+                <li><a href="__GROUP__/comment/vote/votefor/agree/comment_id/{$vo.comment_id}">同意[{$vo.agree}]</a></li>
+                <li><a href="__GROUP__/comment/vote/votefor/disagree/comment_id/{$vo.comment_id}">反对[{$vo.disagree}]</a></li>
+            </ul></div>
+            
+            <div class="c_detail">{$vo.comment}</div>
+          </div>
+        </volist>

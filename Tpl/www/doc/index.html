@@ -1,0 +1,17 @@
+<layout name="login_layout" />
+<load href="__STATICS__/css/doc.css"/>
+<php>$list=D("articleView")->where(array("category_id"=>103))->select()</php>
+<div class="doc_left">
+  <ul>
+    <volist name="list" id="vo">
+      <li><a href="{$vo|create_article_url_one}">{$vo.article_title}</a></li>
+    </volist>
+  </ul>
+</div>
+<div class="doc_right"> 
+  <php>
+    $id=!empty($_GET['article_id'])?$_GET['article_id']:157;
+    $a=A('www/article')->show(array('article_id'=>$id));
+  </php>
+  {$a.article.content}
+</div>

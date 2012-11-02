@@ -1,0 +1,54 @@
+<include file="public:header"/>
+<form action="" method="post"><div class="submenu_tool" id="submenu_tool_form">
+  <table width="1095" border="0">
+    <tr>
+      <td width="88" height="36">选择分类：</td>
+      <td width="644">{:W('AdminTool',array('_tool'=>'chooseCategory','checked_id'=>$link['category_id']))}
+       </td>
+      <td width="349">标题：
+        <input type="text" name="keyword" id="search">
+        <input type="button" name="search_button" id="search_button" value="查询"></td>
+    </tr>
+    <tr>
+      <td height="30">时 间 段：</td>
+      <td><include file="public:time_tool"/></td>
+      <td>&nbsp;</td>
+    </tr>
+
+  </table>
+</div>
+</form>
+<div id="manage_content"></div>
+<include file="public:footer"/>
+
+<script type="text/javascript" >
+
+
+delete_button_url="__GROUP__/article/del",
+
+$(document).ready(function(){
+	 ajaxManageContent();
+	 
+	 $('#search_button').click(function(){
+		 
+		 ajaxManageContent();
+		 
+		 });
+	
+	});
+	
+
+
+function ajaxManageContent(){
+	
+	var url='__GROUP__/article/ajaxManageContent?'+$('form').serialize();
+	
+	$.get(
+	url,
+	function(data){
+		$('#manage_content').html(data);
+		});
+	}
+	
+
+  </script>

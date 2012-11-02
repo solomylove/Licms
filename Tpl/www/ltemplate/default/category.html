@@ -1,0 +1,22 @@
+<layout name="login_layout"/>
+  <div class="hot" >
+  <h4 class="abox_title">热门</h4>
+  <php>$article_list=A('www/article')->getList(array('limit'=>5,'order'=>'read_count desc'))</php>
+  <ul>
+    <volist name='article_list' id="vo">
+      <li><a href="{$vo._link}">{$vo.article_title}</a>[阅读{$vo.read_count}]</li>
+      </volist>
+  </ul>
+  </div> 
+  
+
+<div class="recent">
+  <h4 class="abox_title">最新</h4>
+  <php>$article_list=A('www/article')->getList(array('limit'=>5,'order'=>'create_time desc'));</php>
+
+  <ul>
+    <volist name='article_list' id="vo">
+      <li><a href="{$vo._link}">{$vo.article_title}[{$vo.create_time|date='y-m-d',###}]</a></li>
+      </volist>
+  </ul>
+</div>

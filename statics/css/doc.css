@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+.doc_left {
+	float:left;
+	width:200px;
+	padding-top: 20px;
+}
+
+	
+.doc_left li:hover{
+	background-color:#2ADF55;
+	}	
+	
+.doc_left li{
+	display:block;
+	padding-left:20px;
+	width:150px;
+	}	
+	
+	
+.doc_right{
+	float:left;
+	width:900px;
+	border-left:1px solid  #D5D5D5;
+	min-height:500px;
+	padding:20px;
+	}

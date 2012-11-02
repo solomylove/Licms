@@ -1,0 +1,133 @@
+
+
+
+
+
+<script type="text/javascript">
+
+
+var province_id='{$province_id}';
+
+var city_id='{$city_id}';
+
+
+
+<!--省 -->
+
+
+var provinces=new Array();
+    
+  <volist name="provinces" id="vo">
+      
+	provinces[{$key}]=new Array('{$vo.ID}','{$vo.PROVINCENAME}');
+      
+  </volist>
+    
+	
+	
+	
+<!--城市 -->
+var  cities=new Array();
+
+<volist name="cities" id="vo">
+
+cities[{$key}]=new Array('{$vo.PID}','{$vo.CITYNAME}','{$vo.ID}');
+
+</volist>
+
+
+
+$(document).ready(function(){
+	      
+		  
+
+		 
+		 selectProvinces();
+         
+		 selectCities(); 
+		  
+		  
+
+         //省份被选择时候
+
+         $('#provinces option').live('click',function(){
+			 
+			     province_id=$(this).val();
+				 
+				 selectCities();
+
+			 
+		 });
+	
+	});
+
+
+
+function selectCities(){
+	
+	
+	     		var cities_html='';
+									
+					
+			       if(city_id=='' || city_id==null){
+					           
+					   cities_html='<option value="">请选择</option>';   
+					   }
+				
+				$(cities).each(function(index,value){
+					
+					 
+				   if(province_id==value[0]){
+		               var se='';
+			          if(value[2]==city_id){
+				  
+				       se='selected';
+				  }
+				         cities_html+='<option value="'+value[2]+'"'+se+'>'+value[1]+'</option>';
+					}
+					
+					});
+					
+				$('#cities').html(cities_html);
+	
+	}
+	
+	
+	
+function selectProvinces(){
+	        
+		  
+		var provinces_html='';
+		 
+		 if(province_id=='' || province_id==''){
+			 
+			 provinces_html='<option value="">请选择</option>';
+			 
+			 }
+		 
+		  $(provinces).each(function(index,value){
+			  
+			  var se='';
+			  
+			  if(value[0]==province_id){
+				  
+				  se='selected';
+				  
+				  }
+			  
+	          provinces_html+='<option value="'+value[0]+'"'+se+'>'+value[1]+'</option>';
+		  });
+		  
+		  $('#provinces').html(provinces_html);
+	
+	
+	}	
+	
+
+</script>
+
+
+<select name="province_id" id="provinces">
+
+    
+</select> <select name="city_id" id="cities"></select>

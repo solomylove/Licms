@@ -1,0 +1,29 @@
+<assign name="delete_button_url" value="__URL__/del"/>
+<include file="menu:header"/>
+<table width="1021" border="0">
+  <tr>
+    <td width="86" >id</td>
+    <td width="219">公告</td>
+    <td width="325" >链接</td>
+    <td width="158" >时间</td>
+    <td width="59" >操作</td>
+  </tr>
+  
+  <volist name="notice_list" id="vo">
+<tr>
+  <td><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.id}">
+    <label for="checkbox"></label>
+    {$vo.id}</td>
+
+<td><a href="{$vo.link}">{$vo.title}</a></td>
+<td>{$vo.link}</td>
+<td>{$vo.create_time|date='y-m-d H：i:s',###}</td>
+<td><a href="#" class="delete_button">删除</a></td>
+</tr>
+</volist>
+
+
+</table>
+
+<div class="minfoot"><include file="public:checkbox_tool"/><div class="page_show_no_ajax">{$page_show}</div></div>
+<include file="public:footer"/>

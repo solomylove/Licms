@@ -1,0 +1,113 @@
+<include file="public:header"/>
+
+<style>
+.other_info {
+    background-color: #FFFFFF;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+		</style>
+
+ <!-- kindeditor编辑器 -->
+
+<script charset="utf-8" src="__STATICS__/js/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="__STATICS__/js/editor/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			
+			<!--编辑器初始化参数 -->
+			var options={
+				uploadJson:"__URL__"+'/upload',
+				allowFileManager : false,
+				};
+				
+				
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', options);
+				K('input[name=getHtml]').click(function(e) {
+					alert(editor.html());
+				});
+				K('input[name=isEmpty]').click(function(e) {
+					alert(editor.isEmpty());
+				});
+				K('input[name=getText]').click(function(e) {
+					alert(editor.text());
+				});
+				K('input[name=selectedHtml]').click(function(e) {
+					alert(editor.selectedHtml());
+				});
+				K('input[name=setHtml]').click(function(e) {
+					editor.html('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=setText]').click(function(e) {
+					editor.text('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=insertHtml]').click(function(e) {
+					editor.insertHtml('<strong>插入HTML</strong>');
+				});
+				K('input[name=appendHtml]').click(function(e) {
+					editor.appendHtml('<strong>添加HTML</strong>');
+				});
+				K('input[name=clear]').click(function(e) {
+					editor.html('');
+				});
+			});
+		</script>
+
+<form action="__GROUP__/article/{$target}" method="post">
+  <table width="878" height="162" border="0">
+    <tr>
+      <td width="94">标题
+      <label for="article_title2"><span class="must_validate">*</span></label></td>
+      <td width="774"><input name="article_title" type="text" id="article_title" value="{$article.article_title}" size="40" class="input_input"></td>
+    </tr>
+    <tr>
+      <td><label for="publish_time2">时间</label></td>
+      <td><input name="publish_time" type="text" id="publish_time" value="{$article.publish_time}" size="40" class="input_input"></td>
+    </tr>
+        <tr>
+      <td>链接</td>
+      <td><label for="link"></label>
+        <input name="link" type="text" id="link" value="{$article.link}" class="input_input">
+        *链接存在时，会跳转到该链接</td>
+    </tr>
+    <tr>
+      <td><label for="label">作者</label></td>
+      <td><input name="author" type="text" id="author" value="{$article.author}" size="40" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>标签
+      <label for="tag"></label></td>
+      <td><input name="tag" type="text" id="tag" value="{$article.tag}" size="40" class="input_input">
+        *多个标签
+  用‘，’隔开 ,有助于搜索</td>
+    </tr>
+    <tr>
+      <td>选择分类：<span class="must_validate">*</span></td>
+      <td>{:W('AdminTool',array('_tool'=>'chooseCategory','checked_id'=>$article['category_id']))}</td>
+    </tr>
+    <tr>
+      <td>导读：</td>
+      <td><label for="guide"></label>
+      <input name="guide" type="text" id="guide" value="{$article.guide}" class="input_input"></td>
+    </tr>
+  </table>
+  
+  <div class="article_content">
+    <textarea id="editor_id" name="content" style="width:1000px;height:541px;">{$article.content|htmlspecialchars}</textarea>
+    </div>
+<div class="other_info">
+<input name="thumb_on" type="checkbox" value="" checked>
+生成缩略图
+<label for="short_on"></label>
+<input name="short_on" type="checkbox" id="guide_on" checked>
+<label for="short_on"></label>
+生成导读 
+<input type="checkbox" name="notice_on" id="checkbox" checked>
+通知
+<label for="checkbox"></label>
+</div>
+    <input type="submit" name="button"  class="bn" value="提交">
+</form>
+<include  file="public:footer"/>

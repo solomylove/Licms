@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+.membox{
+	margin-top:40px;
+	min-height:500px;		
+}
+.memphoto img {
+	max-width:150px;
+	max-height:150px;
+    width:expression(this.width > 150 && this.width > this.height ? 150 :    auto); 
+    height:expression(this.height > 150?  : auto); }
+	
+#mem li {
+	float:left;
+	margin-left:30px;
+
+}

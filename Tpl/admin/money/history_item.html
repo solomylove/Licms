@@ -1,0 +1,22 @@
+<table width="655" border="0">
+  <tr>
+    <td width="143">用户名</td>
+    <td width="129"> 充值金额</td>
+    <td width="174">充值时间</td>
+    <td width="112">授理人</td>
+    <td width="75">操作</td>
+  </tr>
+  <volist name="money_list" id="vo">
+  <tr>
+    <td><input name="checkbox" type="checkbox" id="checkbox" value="{$vo.money_id}">
+      <label for="checkbox"></label> 
+      {$vo.username}</td>
+    <td>{$vo.money}</td>
+    <td>{$vo.create_time|date='y-m-d H:i:s',###}</td>
+    <td>{$vo.ownername}</td>
+    <td><a href="#" class="delete_button" value="{$vo.money_id}">删除</a></td>
+  </tr>
+ </volist> 
+</table>
+<div><include file="public:checkbox_tool"/></div>
+<div class="page_show">{$page_show}</div>

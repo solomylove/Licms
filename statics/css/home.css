@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+.head li {
+	float:left;
+	display:block;
+	margin-left:20px;
+}
+
+body li{
+	list-style-type: none;
+}
+
+body {
+    background: none repeat scroll 0 0 #EEEEEE;
+    color: #6E6E6E;
+    font: 14px/22px '微软雅黑','Helvetica Neue',Helvetica,Arial,Sans-serif;
+}
+
+
+
+.usermenu a:hover{
+	text-decoration:underline;
+	}
+
+
+.index {
+	width: 200px;
+	float:left;
+}
+
+.head {
+	height:30px;
+	background-color: #D41F00;
+		color:#FFF;
+	}
+.head a{
+	color:#FFF;	
+}
+	
+
+
+#left{
+	width:180px;
+	float:left;
+	height: 581px;
+	overflow:hidden;
+	}
+	
+a {
+	color:#174B73;
+	text-decoration: none;	
+}
+
+
+.menu_help,.menu_setting,.user_self,.menu_help,.menu_pay,.menu_logout,.menu_money,.logout_icon{
+	background-repeat:no-repeat;
+	display:inline-block;
+	width:20px;
+	height:20px;
+	margin-right:2px;
+	vertical-align:bottom;
+	}
+
+
+
+.user_menu{
+	width: 150px;
+	float:left;
+}
+
+.tool_bar_head {
+	background-repeat: repeat-x;
+	height:: 60px;
+	height: 29px;
+	border-bottom:  #557FAA  3px solid;
+}
+
+#tool_bar_content {
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+
+.tool_menu {
+	border-bottom:#2A3F55 1px solid;
+}
+
+.tool_head_font {
+	margin-left:10px;
+	margin-top:5px;
+}
+
+
+.topmenu{
+	float:right;
+	}
+	
+	.home_show{
+		float:left;
+		width: 600px;
+}
+
+.user_menu li {
+margin-left: 20px;
+}
+
+
+.home-content {
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+width: 1200px;
+min-height: 550px;
+};

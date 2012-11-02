@@ -1,0 +1,65 @@
+<include file="public:header"/>
+
+<div class="reg_box">
+    <div class="item">
+<form action="__GROUP__/admin/add" method="post">      <table width="643" height="501" border="0">
+        <tr>
+          <td width="106" height="27"><label for="textfield5">账户：</label><span class="must_validate">*</span></td>
+          <td width="527"><input name="username" type="text"  id="username" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="28">账户类型：</td>
+          <td>
+            <select name="role_id" id="role_id">
+              <volist name="role_list" id="vo">
+                <option value="{$vo.role_id}">{$vo.role_title}</option>
+              </volist>
+            </select></td>
+        </tr>
+        <tr>
+          <td height="24"><label for="address">密码：<span class="must_validate">*</span></label></td>
+          <td><input name="password" type="text"  id="password" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="24"><label for="address">重复密码：<span class="must_validate">*</span></label></td>
+          <td><input name="repassword" type="text" id="repassword" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="28">地址：</td>
+          <td><input type="text" name="address" id="address" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="38">电话</td>
+          <td><label for="phone"></label>
+            <input type="text" name="phone" id="phone" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="38">邮箱：</td>
+          <td><input type="text" name="email" id="email" class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="38">qq：</td>
+          <td><input type="text" name="qq" id="qq"  class="input_input"></td>
+        </tr>
+        <tr>
+          <td height="38">验证码<span class="must_validate">*</span></td>
+          <td><label for="verify"></label>
+          <input name="verify" type="text" id="verify" size="10" class="input_verify"><img src="__GROUP__/public/verify" name="verify" id="verify_button"></td>
+        </tr>
+        <tr>
+          <td height="156" class="aligentop">备注：</td>
+          <td><label for="other"></label>
+          <textarea name="other" id="other" cols="45" rows="5" class="input_area"></textarea></td>
+        </tr>
+        <tr>
+          <td height="38">&nbsp;</td>
+          <td><input type="submit" value="添加" class="bn"></td>
+        </tr>
+      </table>
+      
+      <p>&nbsp;</p>
+      </form>
+    </div>
+</div>
+
+<include file="public:footer"/>

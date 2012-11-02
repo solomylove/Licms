@@ -1,0 +1,19 @@
+<assign name="site_title" value="$article['article_title']"/>
+<layout name="home_layout"/>
+<load href="__STATICS__/css/article.css"/>
+<div class="article_box">
+  <h1 class="article_title_font">{$article.article_title}</h1>
+  <div class="article_info">作者：{$article_title} 发布时间：{$article.publish_time} 浏览次数：{$article.read_count} </div><div class="article_content">{$article.content}</div>
+
+  <div class="share"><include file="public:share"/>  <p class="article_page_show">{$page_show}</p></div>
+     <div class="relative_read">　　<dl>
+　　<dt>相关：</dt>
+<empty name="relative_list">暂无</empty>
+<volist name="relative_list" id="vo">
+　　<dd><a href="{:U('article/show',array('article_id'=>$vo['article_id']))}"> [{$vo.category_title}]{$vo.article_title}</a></dd>
+</volist>
+　　</dl> </div>
+</div>
+
+
+

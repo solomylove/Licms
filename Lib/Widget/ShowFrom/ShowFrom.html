@@ -1,0 +1,47 @@
+    <label for="select7"></label>
+    {:W('ShowArea',array('province_id'=>$province_id,'city_id'=>$city_id))}<select name="hospital_id" id="hospital"></select>
+    <label for="select8"></label>
+     <script type="text/javascript">
+	var hospital_id="{$hospital_id}";
+ $(document).ready(function(){
+	  getHospitals($('#cities option:selected').val());
+	 });
+ $('#cities').live('change',function(){
+	 
+	   var id =$(this).val();
+	   
+	   getHospitals(id);
+	 
+	 });
+ 
+ 
+ 
+function getHospitals(id){
+	
+		var url='__GROUP__/public/ajax_gethospital';
+	   
+	   var html;
+	   
+	   $.getJSON(url,{city_id:id},function(json){
+		       if(json.status=='1'){  //请求成功
+		    	   html='<option value="">请选择</option>';
+			    $.each(json.data,function(index,value){
+			    	if(value.hospital_id==hospital_id){
+			    		html+='<option value="'+value.hospital_id+'" selected>'+value.hospital_title+'</option>';           
+			    	}else{
+			    		html+='<option value="'+value.hospital_id+'">'+value.hospital_title+'</option>';           
+			    	}
+			   })}else{ 
+					html='<option value="">暂无数据</option>';
+			   }     		  
+		         $('#hospital').html(html);
+		   });
+		  
+
+
+	
+	
+	}
+ 
+ 
+ </script>    

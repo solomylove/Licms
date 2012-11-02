@@ -1,0 +1,39 @@
+
+<include file="menu:header"/>
+
+
+<form name="form1" method="post" action="__URL__/{$target}">
+  <table width="1039" border="0">
+    <tr>
+      <td width="128">科室<span class="must_validate">*</span></td>
+      <td width="901"><label for="title"></label>
+      <input name="title" type="text" id="title" value="{$edit.title}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>电话</td>
+      <td><label for="phone"></label>
+      <input name="phone" type="text" id="phone" value="{$edit.phone}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>传真</td>
+      <td><label for="fax"></label>
+      <input name="fax" type="text" id="fax" value="{$edit.fax}" class="input_input">
+      <input name="id" type="hidden" id="id" value="{$_GET.id}"></td>
+    </tr>
+    <tr>
+      <td class="aligentop">职能职责</td>
+      <td><label for="textfield"></label>
+        <label for="intro"></label>
+        <textarea name="intro" id="intro" cols="45" rows="5" class="input_area">{$edit.intro}</textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="ajax-submit" id="ajax_submit" value="发布" class="bn"></td>
+    </tr>
+  </table>
+</form>
+
+
+
+<include file="public:footer"/>
+

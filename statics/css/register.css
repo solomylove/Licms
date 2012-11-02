@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+
+ body{ font-size:12px;}
+ table td{text-align:left; }
+ #foot table td{ line-height:25px;}
+ .backimg{  background-image:url(../images/123.gif)!important;width:134px; height:38px; border-width:0px}
+/*.backimg{ background-image:url(../images/register.gif)!important;width:111px; height:111px}
+      
+       .backimg{ background-image:url(../images/register.gif)!important;width:209px; height:60px; border-width:0px}
+       .backimg:hover{ background-image:url(../images/register.gif)!important; background-position:0 -62PX; width:209px; height:60px; border-width:0px}
+       .backimg:active{ background-image:url(../images/register.gif)!important; background-position:0 -184PX; width:209px; height:60px; border-width:0px}
+    
+ .txtbg{ background-image:url(../images/textbg.gif); background-color:White; background-position:0 40px; padding-left :5px; padding-top:10px; float:left; font-size:15px;  border-width:0px;width:322px; height:28px} */
+       
+ .txtbg{  width:220px; height:21px;}
+       
+       .txtcodebg{ background-image:url(../images/textcodebg.gif); background-color:White; background-position:0 40px; padding-left :5px; padding-top:10px; float:left; font-size:15px;  border-width:0px;width:50px; height:28px}
+       
+ .regbgtitle{ background-image:url(../images/regbg.jpg); background-position:0 -4PX; background-repeat:repeat-y; width:986px; height:508px}
+
+
+.logo_w{ background-image:url(../images/logo_w.gif)}
+.content .mhd,.content .mft,.cont-tab td.td3 .info b,.info-pop-t,.info-pop-t b,div.info-pop-b b,div.info-pop-b,.info-pop .arr,.btn-jc,.btn-submit,.btn-submit-act,.Aenter{background-image:url(../images/regbg.gif); background-repeat:no-repeat}
+.content .mcont{ background-image:url(../images/bg_y.gif); background-repeat:repeat-y}
+.main-cont-tit{ background-image:url(../images/bg_x.gif); background-repeat:repeat-x}
+.ico-ok{ background-image:url(../images/right.png); float:right; padding-left:-1px;  width:15px; height:15px; margin-top:-20px}
+.ico-error{ background-image:url(../images/error.gif); float:right;  width:14px; height:14px;  margin-top:-19px}
+.ico-loading{ background-image:url(../images/loading.gif); float:right;  width:16px; height:16px;  margin-top:-19px}
+
+html,body{ text-align:center; background-color:#FFF}
+
+
+
+.header{ width:960px;height:90px;margin:0px auto}
+	.logo{float:left;margin-top:23px}
+	.logo_w{float:left;width:283px; height:36px;margin-top:25px; background-position:0px 0px}
+	.head_links{float:right;white-space:nowrap; text-align:right; color:#999; margin-top:40px}
+		.head_links a{color:#999; text-decoration:none}
+		.head_links a:hover{text-decoration:underline}
+		
+.content{width:964px; height:auto;margin:0px auto;z-index:444}
+	.content .mhd{ width:964px; height:73px; position:relative; background-position:-9px -4px; position:relative}
+	.content .mcont{ width:964px; height:auto; background-position:-7px 0px; text-align:center}
+	.content .mft{ width:964px; height:10px; position:relative; font-size:0px; line-height:0px; overflow:hidden; background-position:-9px -102px; position:relative}
+		.content .mhd .tit{ font-size:12px; color:#D3EAFE; line-height:16px; position:absolute; left:55px; top:19px; text-align:left; width:900px}
+.btn-jc{ width:43px; height:36px; vertical-align:middle; background-position:-468px -146px; border:0px; font-size:12px; color:#1F79A7; cursor:pointer}
+.btn-jc:active{ padding-top:20px; padding-left:10px;}
+
+	.btn-submit{ width:117px; height:41px; background-position:-250px -219px; border:0px; cursor:pointer; margin:0px 0px}
+	.btn-submit-act{ border:0px;width:117px; height:41px; background-position:-126px -219px; cursor:pointer; margin:25px 0px}
+	.creat-btn .btn-submit{ width:117px; height:41px; background-position:-251px -219px; border:0px; cursor:pointer; margin:25px 0px}
+	.creat-btn .btn-submit-act{ border:0px;width:117px; height:41px; background-position:-368px -219px; cursor:pointer; margin:25px 0px}
+
+
+.info-pop{width:300px;height:auto; text-align:left; font-size:12px; background-color:#EDEDEB; position:absolute}
+.info-pop-t{width:100%;height:3px; line-height:0px; font-size:0px; overflow:hidden; background-position:-78px -146px}
+div.info-pop-t b{ display:block; width:5px; height:3px; font-size:0px; overflow:hidden}
+.info-pop-t b.cr-l{ float:left; background-position:-75px -146px}
+.info-pop-t b.cr-r{ float:right; background-position:-440px -146px}
+.info-pop-c .cont{ clear:both; margin-right:2px; border:#BEBCB5 1px solid; padding:2px 10px; background-color:#FFFEF6; border-width:0px 1px; color:#4A4A4A; line-height:24px; font-family:simsun}
+.info-pop-t{width:100%;height:3px; line-height:0px; font-size:0px; overflow:hidden; background-position:-80px -146px}
+.info-pop-b{width:100%;height:5px; line-height:0px; font-size:0px; overflow:hidden; background-position:-78px -154px}
+div.info-pop-b b{ display:block; width:5px; height:5px; font-size:0px; overflow:hidden}
+.info-pop-b b.cr-l{ float:left; background-position:-75px -154px}
+.info-pop-b b.cr-r{ float:right; background-position:-440px -154px}
+.info-pop .arr{ width:9px; height:13px; overflow:hidden; position:absolute; left:-8px; top:10px; background-position:-65px -146px}
+.mimadj{ background-image:url(../images/mimadj.png); height:25px; background-repeat:no-repeat; width:130px;}
+.mimadj1{ background-image:url(../images/mimadj.png); height:25px;background-position:0px -25px; background-repeat:no-repeat; width:130px;}
+.mimadj2{ background-image:url(../images/mimadj.png); height:25px;background-position:0px -50px; background-repeat:no-repeat; width:130px;}
+.mimadj3{ background-image:url(../images/mimadj.png); height:25px; background-position:0px -75px;  background-repeat:no-repeat; width:130px;}
+li {list-style:none;}
+img {border:0px;}
+body {text-align:center; font-size:12px;}
+a:link, a:visited, a:active {color:#333; text-decoration:none;}
+a:hover {color:#369; text-decoration:none;}
+a {outline: none;}
+.fl {float:left;padding-left:20px;}
+.fr {float:left;  padding-left:580px; }
+.clear {clear:both}
+
+.fr1 {float:left;  padding-left:580px; text-align:right }
+
+
+
+
+
+#main {background:url(../images/regbg1.png) repeat-x; width:990px}
+
+.reg .top {height:110px;}
+.reg .top .l {width:50%; height:90px; margin-top:10px; position:relative;}
+.reg .top .l .tel {position:absolute; right:3px; bottom:0px; overflow:hidden;}
+.reg .top .l .tel strong {color:#f00; font-size:14px;}
+
+.reg .c .tit1 {height:49px; background:url(../images/regtit.png) no-repeat; overflow:hidden;}
+.reg .c .tit2 {height:49px; background:url(../images/regtit.png) no-repeat 0 -49px; overflow:hidden;}
+.reg .c .tit3 {height:49px; background:url(../images/regtit.png) no-repeat 0 -98px; overflow:hidden;}
+.reg .c .table {margin:10px 0 0 50px;}
+.reg .c .table strong {color:#f00;}
+.reg .c .table tr {height:40px;}
+.reg .c .table tr .text {width:180px; height:22px; background:url(../images/textbg.gif) repeat-x; padding:0 5px; line-height:22px; border:1px solid #d7d7d7; overflow:hidden;}
+
+#footer .submenu {width:948px; text-align:center; height:31px; line-height:31px; border:1px solid #e5e5e5; border-bottom:2px solid #c00; margin-top:6px; color:#c00; clear:both;}
+#footer .submenu a:link, #footer .submenu a:visited, #footer .submenu a:active {color:#c00; text-decoration:none;}
+#footer .submenu a:hover {color:#c00; text-decoration:none;}
+#footer p {line-height:150%; text-align:center; padding:5px 0 20px 0;}
+
+
+/*��¼*/
+.enter .left {width:550px; height:418px; float:left; background:url(../images/enterleftbg.jpg) no-repeat; overflow:hidden;}
+.enter .right {width:400px; height:418px; float:left; background:url(../images/enterrightbg.png) no-repeat; position:relative; overflow:hidden; z-index:100;}
+.enter .right .table { position:absolute; left:-31px; top:64px; overflow:hidden; z-index:200; height: 153px; width: 290px; }
+.enter .right .zhuce { position:absolute; left:50px; top:270px; overflow:hidden; z-index:200; width:250px; font-weight:bold; text-align:center;}

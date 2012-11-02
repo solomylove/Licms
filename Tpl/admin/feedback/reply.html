@@ -1,0 +1,40 @@
+<include file="menu:header"/>
+
+
+<form action="__URL__/reply_add/feedback_id/{$f.feedback_id}" method="post">
+  <table width="677" border="0">
+    <tr>
+      <td width="112">用户：</td>
+      <td width="555">{$f.username}</td>
+    </tr>
+    <tr>
+      <td>标题：</td>
+      <td>{$f.title}</td>
+    </tr>
+    <tr>
+      <td>内容：</td>
+      <td>{$f.content}</td>
+    </tr>
+    <tr>
+      <td>时间：</td>
+      <td>{$f.create_time|date='y-m-d H:i:s',###}</td>
+    </tr>
+    <tr>
+      <td>回复内容：</td>
+      <td><p>
+        <label for="content"></label>
+        <textarea name="content" id="content" cols="45" rows="5" class="input_area"></textarea>
+      </p>
+      <p>
+        <input type="submit" name="button" id="button" value="回复">
+      </p></td>
+    </tr>
+    <tr>
+      <td>已有回复：</td>
+      <td><volist name="reply" id="vo">
+        <p>{$vo.content}[{$vo.create_time|date='y-m-d H:i:s',###}]<a href="__URL__/reply_del/reply_id/{$vo.reply_id}">删除 </a></p></volist></td>
+    </tr>
+  </table>
+</form>
+
+<include file="public:footer"/>

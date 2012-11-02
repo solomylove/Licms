@@ -1,0 +1,25 @@
+<include file="menu:header"/>
+<script type="text/javascript">
+
+delete_button_url="__GROUP__/sensitive/del";
+</script>
+<div id="manage_content">
+<table width="400" border="0">
+  <tr>
+    <td>字</td>
+    <td>操作</td>
+  </tr>
+ <volist name="word_list" id="vo">
+  <tr>
+    <td><input type="checkbox" name="checkbox" id="checkbox" value="{$vo.id}">
+      <label for="checkbox"></label>
+      {$vo.word}</td>
+    <td><a  href="#" class="delete_button">删除</a></td>
+  </tr>
+ </volist> 
+</table>
+</div>
+
+<div class="page_show_no_ajax">{$page_show}</div>
+<include file="public:checkbox_tool"/>
+<include file="public:footer"/>

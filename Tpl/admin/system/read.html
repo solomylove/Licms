@@ -1,0 +1,39 @@
+<include file="menu:header"/>
+<form action="__GROUP__/system/add_read" method="post">
+  <table width="587" border="0">
+    <tr>
+      <td width="148"><label for="page_size">默认分页字数 </label></td>
+      <td width="264"><input name="page_size" type="text" class="input_input" id="page_size" value="{$config.page_size}"></td>
+    </tr>
+    <tr>
+      <td>前台用户搜索计数</td>
+      <td><label for="user_search_count"></label>
+      <input name="user_search_count" type="text" id="user_search_count" value="{$config.user_search_count}"  class="input_input"></td>
+    </tr>
+    <tr>
+      <td>网站默认标题：</td>
+      <td><input name="site_title" type="text" id="site_title" value="{$config.site_title}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>网站关键字：</td>
+      <td><label for="{$config.site_keywords}"></label>
+      <input name="site_keywords" type="text" id="{$config.site_keywords}" value="{$config.site_keywords}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>网站描述：</td>
+      <td><label for="site_description"></label>
+      <input name="site_description" type="text" id="site_description" value="{$config.site_description}" class="input_input"></td>
+    </tr>
+    <tr>
+      <td>文章开启审核：</td>
+      <td><input type="checkbox" name="article_status_on" id="article_status_on" {$config.article_status_on|checkbox}>
+      <label for="article_status_on"></label></td>
+    </tr>
+    <tr>
+      <td height="60">&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="修改" class="bn"></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+<include file="public:footer"/>

@@ -1,0 +1,25 @@
+<layout name="login_layout"/>
+
+<div class="login_box">
+<h4>用户登陆</h4>
+    <div class="item">
+<form action="{:U('public/checklogin')}" method="post" id="regForm">      
+
+<div class="lb-item">
+<div class="item_left">用户名：</div>
+<input name="username" type="text" class="input_input" id="username" autocomplete="off">
+      </div>
+      <div class="lb-item">
+        <div class="item_left">
+          <label for="address">密码：</label>
+        </div>
+          <input name="password" type="password" class="input_input" id="password">
+           
+      </div>
+      <div>
+        <input name="login_button" type="submit" id="login_button" value="注册">
+      </div>
+</form>
+    </div>
+
+</div>

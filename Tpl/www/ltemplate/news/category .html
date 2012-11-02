@@ -1,0 +1,29 @@
+<layout name="login_layout"/>
+<load href="__STATICS__/css/news.css"/>
+<style type="text/css">
+.num_list {
+	list-style-type: decimal;
+}
+.s_main{
+		padding-left:30px;
+	padding-right:30px;
+	}
+</style>
+<div class="subnav"><php>$cate_list=A('www/wCategory')->getList(array('need'=>'child',level=>'1'));</php>
+<ul><volist name="cate_list" id="vo"><li><a href="{$vo._link}">{$vo.category_title}</a></li></volist></ul>
+</div>
+<div class="s_main">
+<php>$location=current_location()</php>
+<span><volist name="location" id="vo"><a href="{$vo._link}">{$vo.category_title}</a>--</volist></span>
+
+<php>
+$a_list=A('www/article')->getList(array('page'=>true));
+</php>
+<ol> 
+<volist name="a_list" id="vo">
+<li class="num_list"><a href="{$vo._link}">{$vo.article_title}</a>[{$vo.create_time|date='y-m-d',###}]</li>
+</volist>
+</ol>
+
+<div>{$data.page}</div></div>
+

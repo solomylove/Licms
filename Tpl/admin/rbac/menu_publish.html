@@ -1,0 +1,24 @@
+<include file="menu:header"/>
+<div class="submenu_tool"><form action="__URL__/{$target}" method="post">
+<notempty name="menu">
+<input name="menu_id" type="hidden" value={$menu.menu_id}">
+</notempty>
+<notempty name="_GET['p_id']">
+<input name="p_id" type="hidden" value="{$_GET.p_id}">
+</notempty>
+<table width="400" border="0">
+  <tr>
+    <td>菜单名</td>
+    <td><input name="menu_title" type="text" id="menu_title" value="{$menu.menu_title}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td>完整操作地址</td>
+    <td><input name="menu_name" type="text" id="menu_name" value="{$menu.menu_name}" class="input_input"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" id="button" value="提交" class="bn"></td>
+  </tr>
+</table>
+</form></div>
+<include file="public:footer"/>
